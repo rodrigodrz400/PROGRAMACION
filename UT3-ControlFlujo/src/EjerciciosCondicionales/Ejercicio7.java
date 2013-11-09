@@ -2,9 +2,7 @@ package EjerciciosCondicionales;
 
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
-public class Actividad7 {
+public class Ejercicio7 {
 
 	
 	//El juego de piedra/papel/tijera. Haz un programa para jugar a piedra/papel/tijera con el ordenador. 
