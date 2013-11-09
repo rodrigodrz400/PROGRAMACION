@@ -2,7 +2,7 @@ package EjerciciosCondicionales;
 
 import java.util.Scanner;
 
-public class Ejercicios4 {
+public class Ejercicio4 {
 
 	/*
 	 * El ordenador de nuestro coche calcula los kilómetros que nos quedan antes de repostar. Crea un programa que pida:
