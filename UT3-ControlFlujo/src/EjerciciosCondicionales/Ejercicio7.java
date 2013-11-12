@@ -41,29 +41,37 @@ public class Ejercicio7 {
 		System.out.println( "La máquina ha elegido: " + Maquina);
 		
 		
-		if (usuario=="piedra" && Maquina == "piedra"){
+		if (usuario.equals("piedra") && Maquina.equals("piedra")){
 			System.out.println("El resultado es EMPATE" );
-		}else if (usuario=="piedra" && Maquina == "papel"){
-			System.out.println("Lo siento pero, HA PERDIDO");
-		}else if (usuario== "piedra" && Maquina == "tijera"){
-			System.out.println("Enhorabuena HA GANADO");
+		}else if (usuario.equals("piedra") && Maquina.equals("papel")){
+			System.out.println("Lo siento pero, HAS PERDIDO");
+		} else if (usuario.equals("piedra") && Maquina.equals("tijera")){
+			System.out.println("Enhorabuena HAS GANADO");
 		
-		}else if (usuario== "papel" && Maquina == "tijera"){
-			System.out.println("Lo siento pero, HA PERDIDO");
-		}else if (usuario== "papel" && Maquina == "papel"){
+		}else if (usuario.equals("papel") && Maquina.equals("tijera")){
+			System.out.println("Lo siento pero, HAS PERDIDO");
+		}else if (usuario.equals("papel") && Maquina.equals("papel")){
 			System.out.println("El resultado es EMPATE");
-		}else if (usuario=="papel" && Maquina == "piedra"){
-			System.out.println("Enhorabuena HA GANADO");
+		}else if (usuario.equals("papel") && Maquina.equals("piedra")){
+			System.out.println("Enhorabuena HAS GANADO");
 		
-		}else if (usuario=="tijera" && Maquina == "piedra"){
-			System.out.println("Lo siento pero, HA PERDIDO");
-		}else if (usuario== "tijera" && Maquina == "tijera"){
+		}else if (usuario.equals("tijera") && Maquina.equals("piedra")){
+			System.out.println("Lo siento pero, HAS PERDIDO");
+		}else if (usuario.equals("tijera") && Maquina.equals("tijera")){
 			System.out.println("El resultado es EMPATE");
-		}else if (usuario== "tijera" && Maquina == "papel"){
-			System.out.println("Enhorabuena HA GANADO");
+		}else if (usuario.equals("tijera") && Maquina.equals("papel")){
+			System.out.println("Enhorabuena HAS GANADO");
 		}
 		
+		// Otra forma
+		/*
+		if (usuario.equals("piedra")) {
+			if (Maquina.equals("piedra")) {
+				
+			}
+		}*/
 		
+		//if (usuario.equals(Maquina)) {system.out}	
 		
 	}
 
