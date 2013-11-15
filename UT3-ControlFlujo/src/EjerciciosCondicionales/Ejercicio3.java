@@ -11,22 +11,31 @@ public class Ejercicio3 {
 	 */
 	public static void main(String[] args) {
 
-		
-		Scanner teclado = new Scanner (System.in);
-		
-		System.out.println("Por favor introduzca el importe del producto");
-		double precio = teclado.nextDouble();
-		
-		if (precio <= 20){	
-			System.out.print("El precio del producto rebajado es de " + (precio * 0.9) + "€  (10% de descuento)" );
-		}else if (precio >= 20 && precio <=50){
-			System.out.print("El precio del producto rebajado es de " + (precio * 0.8) + "€  (20% de descuento)" );
-		}else{
-			System.out.print("El precio del producto rebajado es de " + (precio * 0.75) + "€  (25% de descuento)" );
-		}
-		
-	teclado.close();
-		
-	}
+	       Scanner teclado = new Scanner (System.in);
+           
+           System.out.println("Por favor introduzca el importe del producto");
+           double precio = teclado.nextDouble();
+           double descuento;
+           
+           if (precio <= 20){
+                   descuento=0.1;
+           }else if (precio > 20 && precio <=50){
+                   descuento=0.2;
+           }else{
+                   descuento=0.25;
+           }
+           
+           /*
+           if (precio <= 20) descuento=0.1;
+           if (precio > 20 && precio <=50)        descuento=0.2;
+           if (precio > 50) descuento=0.25;
+            */
+           
+           System.out.print("El precio del producto rebajado es de " + (precio - precio * descuento) 
+                           + "€ (" + descuento*100 + "% de descuento)" );
+           
+   teclado.close();
+           
+   }
 
 }
