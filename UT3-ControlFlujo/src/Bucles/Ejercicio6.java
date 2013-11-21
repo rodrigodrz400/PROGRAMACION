@@ -15,7 +15,7 @@ public class Ejercicio6 {
 		int numero1 = 0;
 		int numero2 = 0;
 		String operacion ="";
-		
+		boolean continuar = true;
 
 				System.out.println("Introduzca un número entero");
 				numero1 = teclado.nextInt();
@@ -48,8 +48,9 @@ public class Ejercicio6 {
 							}
 							}else{
 								System.out.println("Ha introducido un valor incorrecto, EL PROGRAMA HA FINALIZADO.");
+								continuar=false;
 								}
-				}while(operacion != "*" || operacion != "/" || operacion != "-" || operacion != "+");
+				}while(continuar);
 			
 		
 			

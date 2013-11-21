@@ -29,7 +29,7 @@ public class Ejercicio5for {
 					   	}	
 			} while (n1>n2);
 			
-		for (int i=n2; i>=n1; --i){
+			for (int i=n2; i>=n1; --i){
 			suma2 += i;
 			}
 		System.out.println("---FIN DE LA SECUENCIA--");
