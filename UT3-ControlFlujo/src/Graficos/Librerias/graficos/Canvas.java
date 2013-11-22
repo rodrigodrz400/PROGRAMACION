@@ -22,7 +22,7 @@ public class Canvas {
 	private JFrame frame;
 	private CanvasComponent component;
 
-	private static final int MIN_SIZE = 500;
+	private static final int MIN_SIZE = 550;
 	private static final int MARGIN = 10;
 	private static final int LOCATION_OFFSET = 120;
 
