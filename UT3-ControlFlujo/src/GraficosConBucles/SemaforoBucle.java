@@ -9,7 +9,7 @@ public class SemaforoBucle {
 	public static void main(String[] args) throws InterruptedException {
 	
 					Rectangle caja,palo;
-					Ellipse verde,ambar,rojo = null;
+					Ellipse verde,ambar,rojo,apagado = null;
 					int ancho, alto, centro_x,centro_y, diametro_disco; 
 					
 					//Inicializamos los valores de dibujo del semaforo
@@ -31,32 +31,43 @@ public class SemaforoBucle {
 					
 					//Inicializar las variables
 					
+					boolean inicial = true;
 					
+					do {
 						verde= new Ellipse (centro_x -25, centro_y -110, diametro_disco, diametro_disco);
 						verde.draw();
 						verde.fill();
 						verde.setColor(Color.GREEN);
-						Thread.sleep(3000);
+						Thread.sleep(1000);
+						apagado = new Ellipse (centro_x -25, centro_y -110, diametro_disco, diametro_disco);
+						apagado.draw();
+						apagado.fill();
+						apagado.setColor(Color.GRAY);
+						
 					
 						ambar= new Ellipse (centro_x -25, centro_y-25, diametro_disco, diametro_disco);
 						ambar.draw();
 						ambar.fill();
 						ambar.setColor(Color.ORANGE);
-						Thread.sleep(3000);
+						Thread.sleep(1000);
+						apagado = new Ellipse (centro_x -25, centro_y-25, diametro_disco, diametro_disco);
+						apagado.draw();
+						apagado.fill();
+						apagado.setColor(Color.GRAY);
 					
 						rojo= new Ellipse (centro_x -25, centro_y +60, diametro_disco, diametro_disco);
 						rojo.draw();
 						rojo.fill();
 						rojo.setColor(Color.RED);
-						Thread.sleep(3000);
+						Thread.sleep(1000);
+						apagado = new Ellipse (centro_x -25, centro_y +60, diametro_disco, diametro_disco);
+						apagado.draw();
+						apagado.fill();
+						apagado.setColor(Color.GRAY);
+						
+					}while (inicial = true);
 						
 					
-						
-					
-					
-						
-				
-						
 
 	}
 
