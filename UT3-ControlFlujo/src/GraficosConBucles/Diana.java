@@ -1,6 +1,6 @@
 package GraficosConBucles;
 
-import Graficos.Librerias.graficos.*;
+import Graficos.Librerias.Graficos.*;
 
 public class Diana {
 
@@ -9,8 +9,8 @@ public class Diana {
 	public static void main(String[] args) throws InterruptedException {
 		
 		Ellipse circulos;
-		double width = 550;
-		double height = 550;
+		double width = 500;
+		double height = 500;
 		double x = 0;
 		double y = 0;
 	

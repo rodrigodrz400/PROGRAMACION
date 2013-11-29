@@ -1,39 +1,44 @@
 package GraficosConBucles;
 
-import Graficos.Librerias.graficos.Color;
-import Graficos.Librerias.graficos.Ellipse;
-import Graficos.Librerias.graficos.Rectangle;
+
+import Graficos.Librerias.Graficos.*;
+
 
 public class Pelota {
-
-	// Crea un programa que dibuje un círculo en la pantalla. 
-	//Haz que el círculo se mueva por la pantalla, rebotando en sus bordes.
-	public static void main(String[] args) {
+//dibujar una pelota
+	public static void main(String[] args) throws InterruptedException {
+		Ellipse pelota;
+		Rectangle tablero;
+		Color color;
+		int movimiento_x,movimiento_y;
 		
-		//VARIABLES DE LA PELOTA
-		int pelota_x = 50;
-		int pelota_y = 50;
-		int anchoPelota = 40;
-		int altoPelota = 40;
-		
-		Ellipse pelota = new Ellipse (pelota_x, pelota_y, anchoPelota, altoPelota);
-		
-		pelota.draw();
+		tablero=new Rectangle(0,0,400,400);
+		tablero.draw();
+		pelota=new Ellipse(200,200,40,40);//x y ancho alto
+		color=new Color(((int)Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));//generar un color
+		//pelota.setColor(Color.LIGHT_GRAY);//elegir un color de la clase Color
+		pelota.setColor(color);
 		pelota.fill();
-		pelota.setColor(Color.BLUE);
 		
-		//VARIABLES DE LA PANTALLA
-		int pantalla_x= 25 ;
-		int pantalla_y = 25;
-		int anchoPantalla = 500;
-		int altoPantalla = 500;
+		//movimiento_x=7;//mueve x 4 pixeles
+		//movimiento_y=8;//mueve y 4 pixeles
 		
+		//(int)Math.random() * (max-min)) + min
+		movimiento_x= (int) (Math.random()*7) -3; //mueve entre cero y siete
+		movimiento_y= (int) (Math.random()*7) -3; //mueve entre cero y siete
+		if (movimiento_x == 0) movimiento_x++;
+		if (movimiento_y == 0) movimiento_y++;
 		
-		
-		Rectangle pantalla = new Rectangle (pantalla_x ,pantalla_y , anchoPantalla, altoPantalla);
-		
-		pantalla.draw();
-		
+		while(true){
+			pelota.translate(movimiento_x, movimiento_y);//mueve un pixel en la x y otro en la y
+			if(((pelota.getX()+40)>=400 || pelota.getX()<=0)){
+				movimiento_x=-movimiento_x;
+			}
+			if((pelota.getY()+40)>=400 || pelota.getY()<=0){
+				movimiento_y=-movimiento_y;
+			}
+			Thread.sleep(7);//se espera 100 milisegundos
+		}
 
 	}
 

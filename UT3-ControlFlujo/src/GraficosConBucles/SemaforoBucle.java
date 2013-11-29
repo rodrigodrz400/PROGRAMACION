@@ -1,7 +1,8 @@
 package GraficosConBucles;
-import Graficos.Librerias.graficos.Color;
-import Graficos.Librerias.graficos.Ellipse;
-import Graficos.Librerias.graficos.Rectangle;
+import java.util.logging.Formatter;
+
+import Graficos.Librerias.Graficos.*;
+
 
 public class SemaforoBucle {
 
@@ -44,7 +45,7 @@ public class SemaforoBucle {
 						apagado.fill();
 						apagado.setColor(Color.GRAY);
 						
-					
+						
 						ambar= new Ellipse (centro_x -25, centro_y-25, diametro_disco, diametro_disco);
 						ambar.draw();
 						ambar.fill();
@@ -55,6 +56,7 @@ public class SemaforoBucle {
 						apagado.fill();
 						apagado.setColor(Color.GRAY);
 					
+						
 						rojo= new Ellipse (centro_x -25, centro_y +60, diametro_disco, diametro_disco);
 						rojo.draw();
 						rojo.fill();
