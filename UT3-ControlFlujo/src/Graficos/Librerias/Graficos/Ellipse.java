@@ -1,4 +1,5 @@
-package Graficos.Librerias.graficos;
+package Graficos.Librerias.Graficos;
+
 
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;

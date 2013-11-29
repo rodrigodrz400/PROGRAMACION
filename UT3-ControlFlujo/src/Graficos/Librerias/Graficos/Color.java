@@ -1,4 +1,4 @@
-package Graficos.Librerias.graficos;
+package Graficos.Librerias.Graficos;
 
 public class Color {
 	private int red;
