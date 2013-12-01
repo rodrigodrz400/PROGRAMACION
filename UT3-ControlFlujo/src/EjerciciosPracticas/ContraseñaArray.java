@@ -21,23 +21,31 @@ public class ContraseñaArray {
 		boolean encontrado = false;
 		
 		String intento;
+		int acumulador=0;
+		boolean intentosFin= false;
 		
 		do {
 		System.out.println("Dame una palabra: ");
 		
-		
-		
 		intento =  teclado.next();
+		acumulador++;
+			if (acumulador>2){
+				intentosFin=true;
+				encontrado=false;}
+			
+				for (int i=0; i<palabras.length && encontrado==false; i++){
+					if (intento.equals(palabras[i])) encontrado = true;
+				}
+		}while (encontrado== false && intentosFin==false);
+		
+		if (encontrado==true && intentosFin==false || encontrado==true && intentosFin==true){
+			System.out.println("Ha encontrado una de las 4 palabras ocultas");
+		}
+		if(intentosFin=true && encontrado==false){
+			System.out.println("Ha agotado sus tres intentos para adivinar la palabra oculta");
+		};
 		
 		
-		
-			for (int i=0; i<palabras.length && encontrado==false; i++){
-				if (intento.equals(palabras[i])) encontrado = true;
-			}
-		}while (encontrado== false);
-		
-		
-		System.out.println("Encontrado");
 		
 	}
 

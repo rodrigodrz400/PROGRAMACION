@@ -22,9 +22,9 @@ public class Capicua {
 	long resto;
 
 	while(numero<=0);
-		 numeroRestante=numero;
-		 numeroInvertido=0;
-		 resto=0;
+	 numeroRestante=numero;
+	 numeroInvertido=0;
+	 resto=0;
 
 	// El código que viene a continuación da la vuelta a un numero
 	while(numeroRestante!=0)
