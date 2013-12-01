@@ -22,23 +22,25 @@ public class Fibonacci {
             numero = teclado.nextInt();
           if (numero !=0){
         	  System.out.println("Los " + numero + " primeros términos de la serie de Fibonacci son:"); 
+
 		
-	
 		              System.out.print(fibo1 + " ");
-		              for(int i=0;i<=numero;i++){
-		                   System.out.print(fibo2 + " ");
-		                   fibo2 = fibo1 + fibo2;
-		                   fibo1 = fibo2 - fibo1;
-		                   listaNumeros [i] = fibo2;
+                      for(int i=0;i<=numero;i++){
+                           System.out.print(fibo2 + " ");
+                           fibo2 = fibo1 + fibo2;
+                           fibo1 = fibo2 - fibo1;
+                           listaNumeros [i] = fibo2;
 		               	}System.out.println();
 		              	do{
 		 		            System.out.println("Introduzca otro número para comprobar si esta en la serie");
 		 		            numeroSerie = teclado.nextInt();
-		 		            for(int j=0;j<=listaNumeros.length;j++)
-			 		            if (numeroSerie==listaNumeros.length){
-			 		            	System.out.println("El número esta dentro de serie");
-			 		            } System.out.println("El número no esta dentro de la serie");
-		 		       }while(numeroSerie!=0);
+				 		           for(int j=0;j<=listaNumeros.length;j++){
+						 		        	  if (numeroSerie==listaNumeros.length){
+							 		            System.out.println("El número esta dentro de serie");
+							 		            } System.out.println("El número no esta dentro de la serie");
+				 		           }
+		 		            
+		 		       }while(numero!=0);
 		          	}
 	
         if (numero==0){
