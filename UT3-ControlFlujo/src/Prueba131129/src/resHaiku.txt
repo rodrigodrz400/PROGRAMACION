@@ -1,0 +1,33 @@
+Bienbenido a Haiku Generator.
+
+Comenzaremos recopilando versos (escribe * para terminar)
+
+Dame un verso: hace frio
+Dame un verso: escarcha en las hierba 
+Dame un verso: aula llena 
+Dame un verso: public static void main 
+Dame un verso: *
+
+Versos leidos (4):
+hace frio
+escarcha en las hierba
+aula llena
+public static void main
+
+Haiku
+**********
+public static void main
+escarcha en las hierba
+aula llena
+
+¿Otro Haiku? [S/n] s
+
+Haiku
+**********
+aula llena
+public static void main
+hace frio
+
+¿Otro Haiku? [S/n] n
+
+Adios, gracis por utilizar Haiku Generator.

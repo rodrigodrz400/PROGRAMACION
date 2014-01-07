@@ -37,7 +37,7 @@ public class Pelota {
 			if((pelota.getY()+40)>=400 || pelota.getY()<=0){
 				movimiento_y=-movimiento_y;
 			}
-			Thread.sleep(7);//se espera 100 milisegundos
+			Thread.sleep(15);//se espera 100 milisegundos
 		}
 
 	}
