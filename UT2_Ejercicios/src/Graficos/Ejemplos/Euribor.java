@@ -3,10 +3,8 @@
 	package Graficos.Ejemplos;
 
 
-	import Graficos.Librerias.graficos.Color;
-	import Graficos.Librerias.graficos.Rectangle;
-	import Graficos.Librerias.graficos.Line;
-	import Graficos.Librerias.graficos.Text;
+	import Graficos.Librerias.imagenes.*;
+	
 
 	public class Euribor {
 

@@ -1,9 +1,8 @@
 package Graficos.Ejemplos;
 
 
-import Graficos.Librerias.graficos.Color;
-import Graficos.Librerias.graficos.Ellipse;
-import Graficos.Librerias.graficos.Rectangle;
+import Graficos.Librerias.imagenes.*;
+
 
 public class SemaforoCalculos {
 		

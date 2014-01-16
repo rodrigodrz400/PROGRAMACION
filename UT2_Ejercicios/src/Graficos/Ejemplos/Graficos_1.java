@@ -1,8 +1,7 @@
 package Graficos.Ejemplos;
 
-import Graficos.Librerias.graficos.Canvas;
-import Graficos.Librerias.graficos.Color;
-import Graficos.Librerias.graficos.Rectangle;
+import Graficos.Librerias.imagenes.*;
+
 
 
 

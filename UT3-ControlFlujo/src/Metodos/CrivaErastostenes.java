@@ -13,7 +13,7 @@ public class CrivaErastostenes {
 		int numero = 0;
 
 		Scanner teclado = new Scanner(System.in);
-		System.out.println("Introduzca un nÃºmero entero para calcular la criba de ErastÃ³tenes: ");
+		System.out.println("Introduzca un número entero para calcular la criba de Erastóstenes: ");
 		numero = teclado.nextInt();
 
 		erastostenes(numero);
