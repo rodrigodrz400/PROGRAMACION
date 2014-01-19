@@ -26,12 +26,15 @@ public class EncuentreMinimo {
 
 	public static float minimo3(float n1, float n2, float n3){
 		float resultado = 0;
+		
+		resultado= Math.min( Math.min(n1,n2),n3);
+		/*
 		if (n1 < n2){
 			resultado = Math.min(n1, n3);
 		}else if (n2 < n3){
 			resultado = Math.min(n1, n2);
 		}
-		
+		*/
 		return resultado;
 	}
 }
