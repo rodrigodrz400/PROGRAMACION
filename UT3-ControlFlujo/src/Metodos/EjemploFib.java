@@ -1,4 +1,4 @@
-package metodos;
+package Metodos;
 
 public class EjemploFib {
 
