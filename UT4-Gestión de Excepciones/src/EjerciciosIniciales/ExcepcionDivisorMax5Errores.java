@@ -19,23 +19,27 @@ public class ExcepcionDivisorMax5Errores {
 		hayerror = false;
 		contadorErrores= 0;
 		do {
-			if (contadorErrores==5){
-				System.out.println("Demasiados fallos. Vuelve a intentarlo otro día.");
-				break;
-			}
+			
 			try {
 				System.out.println("Introduzca un número entero:");
 				dividendo = teclado.nextDouble();
+				System.out.println("Introduzca un número entero:");
+				divisor = teclado.nextDouble(); 
 				hayerror = false;
-			} catch (InputMismatchException e) {
-				System.err
-						.println("ERROR: El número introducido no es un número entero. El error es: "
+				System.out.println("Resultado: " + dividendo/divisor);
+			} catch (InputMismatchException | ArithmeticException e) {
+				System.out
+						.println("ERROR: El número introducido no es un número entero o es igual a 0. El error es: "
 								+ e.getMessage());
 				teclado.nextLine();
 				contadorErrores++;
+				if (contadorErrores==5){
+					System.out.println("Demasiados fallos. Vuelve a intentarlo otro día.");
+					break;
+				}
 				hayerror = true;
 			}
-		} while (hayerror == true);
+		} while (hayerror == true && contadorErrores<=5);
 		
 
 		teclado.close();

@@ -10,32 +10,37 @@ public class ExcepcionDivisorSiNoEsEntero {
 	 * un número, vuelva a repetirse el pedir el dividendo y divisor.
 	 */
 	public static void main(String[] args) {
-		double dividendo = 0;
-		double divisor = 0;
-		Scanner teclado = new Scanner(System.in);
-		boolean hayerror;
+        int dividendo=0,divisor=0;
+        boolean leido,es_cero;
+        Scanner teclado=new Scanner(System.in);
+        
+        leido=false;
+        es_cero=false;
+        do{
+                System.out.println("Dame un número:");
+                try{
+                        System.out.print("¿Dos números?: ");
+                        dividendo=teclado.nextInt();
+                        divisor=teclado.nextInt();
+                        leido=true;
+                        System.out.println("Resultado: " + (dividendo/divisor));
+                        es_cero=false;
+                }
+                catch (InputMismatchException e){
+                        leido=false;
+                        teclado.nextLine(); //limpiar buffer para no volver a generar excepción
+                        System.out.println("Error al leer números enteros");
+                }
+                catch (ArithmeticException e) {
+                        es_cero=true;
+                        System.out.println("Error, división por cero");
+                }
+                
+        }while(!leido || es_cero);
 
-		hayerror = false;
+        teclado.close();
+        
 
-		do {
-			try {
-				System.out
-						.println("Introduzca un número entero:");
-				dividendo = teclado.nextDouble();
-				hayerror = false;
-			} catch (InputMismatchException e) {
-				System.err
-						.println("ERROR: El número introducido no es un número entero. El error es: "
-								+ e.getMessage());
-				teclado.nextLine();
-				hayerror = true;
-			}finally{
-				System.out.println("--FIN DEL PROGRAMA--");
-			}
-		} while (hayerror == true);
-		
-
-		teclado.close();
-	}
+}
 
 }
