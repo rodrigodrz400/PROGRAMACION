@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class SecuenciaDeNumerosP5 {
+public class SecuenciaDeNumerosE5 {
 
 	/*
 	 * Escribe un programa que lea una secuencia de números hasta que el usuario

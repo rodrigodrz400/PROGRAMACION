@@ -3,7 +3,7 @@ package EjerciciosProfundizacion;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AreaYperimetroRectanguloP6 {
+public class AreaYperimetroRectanguloE6 {
 
 	/*
 	 * Escribe un programa que calcule el área y el perímetro de una superficie
