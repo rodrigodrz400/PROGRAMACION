@@ -1,5 +1,6 @@
 package EjerciciosProfundizacion;
 
+import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -16,55 +17,70 @@ public class SecuenciaDeNumerosP5 {
 	 */
 
 	static Scanner teclado;
-	public static int[] decimales = new int[50];
+	public static int[] numeros = new int[50];
+	static boolean siguienteLinea = false;
 
 	private static int calcularMayor() {
-		int resultado = decimales[0];
-		for (int i = 0; i < decimales.length; i++) {
-			if (decimales[i] > resultado) {
-				resultado = decimales[i];
+		int resultado = numeros[0];
+		for (int i = 0; i < numeros.length; i++) {
+			if (numeros[i] > resultado) {
+				resultado = numeros[i];
 			}
 		}
 		return resultado;
 	}
 
+	private static int leerNumero() {
+		teclado = new Scanner(System.in);
+		int numeroIntroducido = 0;
+
+		try {
+			if (siguienteLinea == true) {
+				System.out.println("Inserte otro número: ");
+			} else {
+				System.out.println("Escriba números enteros para calcular el mayor:"
+								+ " [la secuencia finaliza al pulsar \"*\"] ");
+				siguienteLinea = true;
+			}
+			numeroIntroducido = teclado.nextInt();
+		}catch (InputMismatchException ime) {
+			throw ime;
+		}catch (NoSuchElementException nsee) {
+			throw nsee;
+		}
+		return numeroIntroducido;
+	}
+
 	public static void main(String[] args) {
 
 		teclado = new Scanner(System.in);
+		String numeroIntroducido = "";
 
-		int resultado = 0;
-		int numeroIntroducido = 0;
-		boolean siguienteLinea = false;
 		int[] decimales = new int[50];
-		
-		boolean finPrograma = true;
-		
-		do {
-			for (int i = 0; i < decimales.length; i++) {
-				try {
-					if (siguienteLinea == true) {
-						System.out.println("Inserte otro número: ");
-					} else {
-						System.out.println("Escriba números enteros para calcular el mayor:"
-								+ " [la secuencia finaliza al pulsar \"*\"] ");
-					}
-					numeroIntroducido = teclado.nextInt();
-					String enteroString = Integer.toString(numeroIntroducido);
-					if (enteroString != "*") {
-						decimales[i] = numeroIntroducido;
-						siguienteLinea = true;
-					} else if (enteroString == "*") {
-						finPrograma  = true;
-					}
 
-				} catch (NoSuchElementException nsee) {
-					System.out.println("\nError: " + nsee.toString());
-					teclado.nextLine();
+		boolean continuarLeyendo = true;
+		do {
+			try {
+				for (int i = 0; i < decimales.length; i++) {
+					numeros[i] = leerNumero();
 				}
+			}catch (InputMismatchException ime) {
+				numeroIntroducido = teclado.next();//Retorna el parámetro almacenado del Scanner
+				if (numeroIntroducido.equals("*")) {
+					System.out.println("\nError: " + ime.toString());
+					continuarLeyendo = false;
+				}else{
+					System.out.println("ERROR: Debe introducir números enteros y no caracteres.");
+				}
+			}catch (NoSuchElementException nsee){
+					System.out.println("\nError: " + nsee.toString());
+					System.out.println("ERROR: No se ha introducido ningún número.");
 			}
-		} while (finPrograma == false);
-		
-		System.out.println("El valor más alto introducido es el número: " + calcularMayor() + ".");
+
+		} while (continuarLeyendo == true);
+
+		System.out.println("El valor más alto introducido es el número: "
+				+ calcularMayor() + ".");
 
 	}
 
