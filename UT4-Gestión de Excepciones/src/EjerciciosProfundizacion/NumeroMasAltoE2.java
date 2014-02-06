@@ -17,38 +17,38 @@ public class NumeroMasAltoE2 {
 	 * tipo double.
 	 */
 	static Scanner teclado;
-	public static boolean leido;
+	
 
-	public static double numeroDouble() {
+	public static double numeroDouble() throws InputMismatchException{
 		double numeroD = 0;
 
 		try {
-			System.out
-					.println("Inserte un número real con un máximo de 8 bytes: (tipo double)");
+			System.out.println("Inserte un número real con un máximo de 8 bytes: (tipo double)");
 			numeroD = teclado.nextDouble();
-			leido = true;
+			
 		} catch (InputMismatchException e) {
-			leido = false;
+			
 			teclado.nextLine();
+			System.out.println("Se ha producido un Error, introduzca de nuevo el número (tipo double)");
 			throw e;
-			// System.out.println("Se ha producido un Error, introduzca de nuevo el número (tipo double)");
+			
 		}
 
 		return numeroD;
 	}
 
-	public static float numeroFloat() {
+	public static float numeroFloat() throws InputMismatchException{
 		float numeroF = 0;
 		try {
-			System.out
-					.println("Inserte un número real con un máximo de 4 bytes: (tipo float)");
+			System.out.println("Inserte un número real con un máximo de 4 bytes: (tipo float)");
 			numeroF = teclado.nextFloat();
-			leido = true;
+			
 		} catch (InputMismatchException e) {
-			leido = false;
+			
 			teclado.nextLine();
+			System.out.println("Se ha producido un Error, introduzca de nuevo el número (tipo float)");
 			throw e;
-			// System.out.println("Se ha producido un Error, introduzca de nuevo el número (tipo float)");
+			
 		}
 
 		return numeroF;
@@ -61,20 +61,22 @@ public class NumeroMasAltoE2 {
 		double nD;
 		float nF;
 		double numeroMayor;
+		boolean leidos = false;
 
 		do {
 			try {
-
+				
 				nD = numeroDouble();
 				nF = numeroFloat();
 				numeroMayor = Math.max(nD, nF);
 				System.out.println("El número mayor de los introducidos es: "
 						+ numeroMayor);
-				leido = true;
+				leidos = true;
 			} catch (InputMismatchException e) {
 				System.out.println("ERROR: No es posible introducir palabras en la entrada de números");
+				leidos = false;
 			}
-		} while (!leido);
+		} while (!leidos);
 	}
 
 }

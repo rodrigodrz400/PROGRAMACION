@@ -1,6 +1,7 @@
 package EjerciciosProfundizacion;
 
 import java.io.IOException;
+import java.io.ObjectInputStream.GetField;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class DividirPorCeroE1 {
 		Scanner teclado = new Scanner(System.in);
 
 		leido = false;
-		es_cero = false;
+		
 		
 		do {
 			for(int i=0; i<25; i++){
@@ -33,16 +34,18 @@ public class DividirPorCeroE1 {
 				divisor = teclado.nextInt();
 				leido = true;
 				
-				if (divisor == 0) throw new ArithmeticException();
+				
 				resultado= dividendo/divisor;
 				System.out.println("Resultado es: " + resultado);
-				es_cero = false;	
+					
 				
 				
 			} catch (ArithmeticException ae) {
-				es_cero = true;
-				System.out.println("\nERROR aritmético: " + ae.toString());
-				teclado.nextLine();
+				
+				System.out.println("Resultado es: Infinito ");
+				System.err.println(ae.getMessage());
+				ae.printStackTrace(System.err);
+				
 			} catch (NumberFormatException nfe) {
 				leido = false;
 				System.out.println("\nERROR de formato numérico: "+ nfe.toString());
@@ -55,7 +58,7 @@ public class DividirPorCeroE1 {
 				teclado.nextLine();
 			}
 
-		} while (!leido || es_cero);
+		} while (!leido);
 
 		teclado.close();
 

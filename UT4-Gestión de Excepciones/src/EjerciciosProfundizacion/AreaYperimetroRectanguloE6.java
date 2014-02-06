@@ -31,7 +31,7 @@ public class AreaYperimetroRectanguloE6 {
 		return resultado;
 	}
 
-	public static double introduceBase() {
+	public static double introduceBase() throws InputMismatchException {
 		teclado = new Scanner(System.in);
 		double base = 0;
 
@@ -47,7 +47,7 @@ public class AreaYperimetroRectanguloE6 {
 		return base;
 	}
 
-	public static double introduceAltura() {
+	public static double introduceAltura() throws InputMismatchException  {
 		teclado = new Scanner(System.in);
 		double altura = 0;
 
@@ -82,7 +82,7 @@ public class AreaYperimetroRectanguloE6 {
 				System.out.println("ERROR: Debe introducir números y no caracteres.");
 				hayErrores = true;
 			}
-		} while (hayErrores);
+		} while (hayErrores == true);
 
 		
 		do {

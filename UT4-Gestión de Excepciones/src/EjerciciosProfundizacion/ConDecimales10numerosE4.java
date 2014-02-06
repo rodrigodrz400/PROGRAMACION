@@ -12,13 +12,14 @@ import java.util.Scanner;
  */
 public class ConDecimales10numerosE4 {
 
-	public static int[] decimales = new int[10];
+	
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
+		double[] decimales = new double[10];
 		
 		int errores = 0;
-		int numeroIntroducido;
+		double numeroIntroducido;
 
 		for (int correctos = 0; correctos < decimales.length;) {
 			try {
@@ -27,7 +28,7 @@ public class ConDecimales10numerosE4 {
 				} else {
 					System.out.println("Escriba 10 números decimales: ");
 				}
-				numeroIntroducido= teclado.nextInt();
+				numeroIntroducido= teclado.nextDouble();
 				decimales[correctos] = numeroIntroducido;
 				correctos++;
 			} catch (InputMismatchException ime) {
@@ -41,15 +42,15 @@ public class ConDecimales10numerosE4 {
 
 		}
 
-		System.out.println("El valor más alto introducido es el número: " + calcularMayor() + ".");
+		System.out.println("El valor más alto introducido es el número: " + calcularMayor(decimales) + ".");
 		System.out.println("Se han producido un total de: " + errores 
 				+ " errores, durante la ejecución del programa.");
 
 		teclado.close();
 	}
 
-	private static int calcularMayor() {
-		int resultado = decimales[0];
+	private static double calcularMayor(double[] decimales) {
+		double resultado = decimales[0];
 		for (int i = 0; i < decimales.length; i++) {
 			if (decimales[i] > resultado) {
 				resultado = decimales[i];
