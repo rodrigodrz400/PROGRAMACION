@@ -11,11 +11,12 @@ public class Cuenta {
 	}
 	
 	public void sacar (double cantidad){
-		if (saldo > 0){
+		
+		if (saldo >= cantidad){
 			saldo = saldo - cantidad;
 			numeroMovimientos++;
 		}else{
-			System.out.println("Su cuenta esta en números rojos.");
+			System.out.println("No se le permite sacar más dinero que el que tiene en la cuenta.");
 		}
 	}
 	public double getSaldo(){

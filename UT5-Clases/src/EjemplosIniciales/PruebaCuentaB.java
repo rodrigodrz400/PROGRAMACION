@@ -2,18 +2,18 @@ package EjemplosIniciales;
 
 import java.util.Scanner;
 
-public class PruebaCuenta {
+public class PruebaCuentaB {
 
-	// La cuenta también guarda en número de movimientos
-	//La cuenta no adminte que saques más del dinero que tienes
 	public static void main(String[] args) {
-
-		Cuenta mi_cuenta;
+		CuentaB mi_cuenta, otraCuenta;
 		double cantidad;
-		
+		String numeroCuenta;
 
 		Scanner teclado = new Scanner(System.in);
-		mi_cuenta = new Cuenta();
+		System.out.println("Inserte su número de cuenta: ");
+		numeroCuenta= teclado.next();
+		mi_cuenta = new CuentaB(numeroCuenta);
+		//otraCuenta = new CuentaB("2222222222", 200);
 
 		int opcion = 0;
 		do {
@@ -38,10 +38,14 @@ public class PruebaCuenta {
 				mi_cuenta.ingresar(cantidad);
 				break;
 			case 2:
-				System.out
-						.println("Indique la cantidad de dinero que desea retirar de su cuenta: ");
-				cantidad = teclado.nextDouble();
-				mi_cuenta.sacar(cantidad);
+				System.out.println("Indique la cantidad de dinero que desea retirar de su cuenta: ");
+				try{
+					cantidad = teclado.nextDouble();
+					mi_cuenta.sacar(cantidad);
+				}catch(SaldoInsuficienteExcep si){
+					System.out.println("Operación no permitida, el saldo de su cuenta es insuficiente.");
+				}
+				
 				break;
 			case 3:
 				System.out.println("El saldo actual de su cuenta es: "
