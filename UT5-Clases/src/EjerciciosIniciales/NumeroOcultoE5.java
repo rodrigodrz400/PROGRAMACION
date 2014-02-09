@@ -2,7 +2,7 @@ package EjerciciosIniciales;
 
 import java.util.Scanner;
 
-public class NumeroOculto {
+public class NumeroOcultoE5 {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
