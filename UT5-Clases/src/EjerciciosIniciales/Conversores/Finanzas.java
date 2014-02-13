@@ -9,10 +9,10 @@ Un constructor finanzas(double), el cual permitirá configurar el cambio Dólar-Eu
  */
 public class Finanzas {
 
-	private static double ValorDolarEuro = 1.36;
+	private double ValorDolarEuro;
 	
 	public Finanzas(){
-		
+		ValorDolarEuro = 1.36;
 	}
 	public Finanzas(double cambioValor){
 		this.ValorDolarEuro=cambioValor;
@@ -26,13 +26,14 @@ public class Finanzas {
 	
 	
 	
-	public static double dolaresToEuros(double dolares){
+	public double dolaresToEuros(double dolares){
 		double euros=0;
 		
 		euros= Math.rint((dolares/ValorDolarEuro)*100)/100;
 		return euros;
 	}
-	public static double eurosToDolares(double euros){
+	
+	public double eurosToDolares(double euros){
 		double dolares=0;
 		
 		dolares=Math.rint((euros*ValorDolarEuro)*100)/100;

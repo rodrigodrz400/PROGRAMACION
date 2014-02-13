@@ -17,14 +17,14 @@ public class PruebaFinanzas {
 		System.out.println(factura01.getValorDolarEuro());
 		
 		System.out.println("Introduzca los valores que desea convertir de dolares a euros: ");
-		System.out.println("15 dolares = " + Finanzas.dolaresToEuros(15) + "€");
-		System.out.println("25 dolares = " + Finanzas.dolaresToEuros(25) + "€");
-		System.out.println("68 dolares = " + Finanzas.dolaresToEuros(68) + "€");
+		System.out.println("15 dolares = " + factura01.dolaresToEuros(15) + "€");
+		System.out.println("25 dolares = " + factura01.dolaresToEuros(25) + "€");
+		System.out.println("68 dolares = " + factura01.dolaresToEuros(68) + "€");
 
 		System.out.println("Ahora introduzca los valores que desea convertir de euros a dolares: ");
-		System.out.println("15 euros = " + Finanzas.eurosToDolares(15) + "$");
-		System.out.println("25 euros = " + Finanzas.eurosToDolares(25) + "$");
-		System.out.println("68 euros = " + Finanzas.eurosToDolares(68) + "$\n");
+		System.out.println("15 euros = " + factura01.eurosToDolares(15) + "$");
+		System.out.println("25 euros = " + factura01.eurosToDolares(25) + "$");
+		System.out.println("68 euros = " + factura01.eurosToDolares(68) + "$\n");
 		
 		System.out.println("Acaba de variar el valor del Euro respecto al dolar");
 		factura02 = new Finanzas(1.38);
@@ -32,14 +32,14 @@ public class PruebaFinanzas {
 		System.out.println(factura02.getValorDolarEuro());
 
 		System.out.println("Introduzca los valores que desea convertir de dolares a euros: ");
-		System.out.println("15 dolares = " + Finanzas.dolaresToEuros(15) + "€");
-		System.out.println("25 dolares = " + Finanzas.dolaresToEuros(25) + "€");
-		System.out.println("68 dolares = " + Finanzas.dolaresToEuros(68) + "€");
+		System.out.println("15 dolares = " + factura02.dolaresToEuros(15) + "€");
+		System.out.println("25 dolares = " + factura02.dolaresToEuros(25) + "€");
+		System.out.println("68 dolares = " + factura02.dolaresToEuros(68) + "€");
 
 		System.out.println("Ahora introduzca los valores que desea convertir de euros a dolares: ");
-		System.out.println("15 euros = " + Finanzas.eurosToDolares(15) + "$");
-		System.out.println("25 euros = " + Finanzas.eurosToDolares(25) + "$");
-		System.out.println("68 euros = " + Finanzas.eurosToDolares(68) + "$\n");
+		System.out.println("15 euros = " + factura02.eurosToDolares(15) + "$");
+		System.out.println("25 euros = " + factura02.eurosToDolares(25) + "$");
+		System.out.println("68 euros = " + factura02.eurosToDolares(68) + "$\n");
 		
 
 	}

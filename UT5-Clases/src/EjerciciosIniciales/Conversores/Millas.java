@@ -10,17 +10,19 @@ pero esta vez exprese el resultado en kilómetros.
  */
 public class Millas {
 
+	private final static double metrosXmilla=1852;
+	
 	public static double millasAMetros(double millas){
 		double metros;
 		
-		metros= millas * 1852;
+		metros= millas * metrosXmilla;
 		
 		return metros;
 	}
 	public static double millasAKilometros(double millas){
 		double kilometros;
 		
-		kilometros= millas * 1.852;
+		kilometros= millas * metrosXmilla;
 		
 		return kilometros;
 	}
