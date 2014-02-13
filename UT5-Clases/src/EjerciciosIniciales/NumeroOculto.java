@@ -2,7 +2,7 @@ package EjerciciosIniciales;
 
 import java.util.Scanner;
 
-public class NumeroOcultoE5 {
+public class NumeroOculto {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
@@ -26,7 +26,7 @@ public class NumeroOcultoE5 {
 				System.out
 						.println(" Pulse 1. Para jugar con un número aleatorio entre 1 y 100");
 				System.out
-						.println(" Pulse 2. Para jugar con un número comprendido entre unos valores, "
+						.println(" Pulse 2. Para jugar con un número comprendido entre unos valores,"
 								+ "máximos y mínimos introducidos por usted.");
 				System.out.println(" Pulse 3. Para salir. ");
 				System.out.print(" \n Opcion --> ");
@@ -37,7 +37,7 @@ public class NumeroOcultoE5 {
 
 			switch (opcion) {
 			case 1:
-				numeroOcultoR = (int) (Math.random() *( 100-1+1) + 1);
+				numeroOcultoR = (int) (Math.random() * 100 + 1);
 				numeroOculto = numeroOcultoR;
 				juego1.getNumeroOculto();
 				System.out.println("(El número oculto es: " + numeroOculto+ " )");
@@ -50,7 +50,7 @@ public class NumeroOcultoE5 {
 				maximo = teclado.nextInt();
 				System.out.println("Introduzca un valor mínimo:");
 				minimo = teclado.nextInt();
-				numeroOcultoP = (int) (Math.random() * (maximo-minimo+1) + minimo);
+				numeroOcultoP = (int) (Math.random() * maximo + minimo);
 				numeroOculto = numeroOcultoP;
 				juego1.getNumeroOculto();
 				System.out.println("(El número oculto es: " + numeroOculto+ " )");
