@@ -19,30 +19,44 @@ onzas = 453 gramos. 1 Lingote = 32,17 libras = 14,59 kg. 1 Onza = 0,0625 libras 
 public class Peso {
 
 	private double pesoKg;
-	public static String medida;
+	private double peso;
+	public String medida;
 	public double libras;
 	public double lingotes;
 	
 	public Peso(double peso, String medida){
-		this.pesoKg=peso;
+		this.peso=peso;
 		this.medida=medida;
 	}
-	public void Convertir(String medida){
-		if(this.medida.equals(medida)){
-				
+	public double getPeso() {
+		if(this.medida.equalsIgnoreCase("lb")){
+			this.pesoKg = this.peso * 453/1000;
+		}else if (medida.equalsIgnoreCase("li")){
+			this.pesoKg = this.peso * 14.59;
+		}else if (this.medida.equalsIgnoreCase("oz")){
+			this.pesoKg = this.peso * 28.35/1000;
+		}else if (this.medida.equalsIgnoreCase("P")){
+			this.pesoKg = this.peso * 1.55/1000;
+		}else if (this.medida.equalsIgnoreCase("k")){
+			this.pesoKg = this.peso * 1.55/1000;
+		}else if (this.medida.equalsIgnoreCase("g")){
+			this.pesoKg = this.peso * 1000;
+		}else if (this.medida.equalsIgnoreCase("q")){
+			this.pesoKg = this.peso * 43.3;
 		}
 		
-	}
-	public double getPeso() {
-		return pesoKg;
+		return Math.rint(pesoKg*100)/100;
 	}
 
 	public double getLibras() {
-		return libras;
+		libras = this.peso * 2.20;
+		return Math.rint(libras*100)/100;
 	}
 
 	public double getLingotes() {
-		return lingotes;
+		lingotes = this.peso / 14.59;
+		return Math.rint(lingotes*100)/100;
 	}
+	
 
 }
