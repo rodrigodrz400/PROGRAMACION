@@ -15,6 +15,11 @@ public class PruebaCoches {
 		coche2 = new Coche("Audi", "A3");
 		System.out.println(coche2.getMarca()+ " " +coche2.getModelo());
 		
+		System.out.println(coche2);
+		System.out.println(coche1);
+		
+		
+		
 	}
 
 }

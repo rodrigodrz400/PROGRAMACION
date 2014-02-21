@@ -28,6 +28,38 @@ public class Peso {
 		this.peso=peso;
 		this.medida=medida;
 	}
+	/*
+	private double peso; 
+	
+	public Peso2(double peso, String unidad){
+	this.peso = peso * factorConversion(unidad)
+	} 
+	
+	private dobule factorConversion(String unidad){
+	double factor;
+	
+		switch(unidad)
+		case "lb" : factor= 453/1000; break;
+		case "li" : factor= 14.59; break; 
+		case "oz" : factor= (28.35/1000); break;
+		case "P"  : factor= (1.55/1000); break;
+		case "k"  : factor= 1; break;
+		case "g"  : factor= 1000; break;
+		case "q"  : factor= 43.3; break;
+		default   : factor=1
+	}
+	
+	public double getLibras() {
+	return peso/factorConversion("lb");
+	}
+	public double getLingotes() {
+	return peso/factorConversion("li");
+	}
+	public double getPeso (String medida) {
+	return peso/factorConversion(medida)
+	}
+	 */
+	
 	public double getPeso() {
 		if(this.medida.equalsIgnoreCase("lb")){
 			this.pesoKg = this.peso * 453/1000;
@@ -38,7 +70,7 @@ public class Peso {
 		}else if (this.medida.equalsIgnoreCase("P")){
 			this.pesoKg = this.peso * 1.55/1000;
 		}else if (this.medida.equalsIgnoreCase("k")){
-			this.pesoKg = this.peso * 1.55/1000;
+			this.pesoKg = this.peso * 1;
 		}else if (this.medida.equalsIgnoreCase("g")){
 			this.pesoKg = this.peso * 1000;
 		}else if (this.medida.equalsIgnoreCase("q")){
