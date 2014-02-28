@@ -8,7 +8,7 @@ package Actividades_4;
  Escribe un programa para probar el funcionamiento del método, para lo que imprimirá la secuencia de
   	varios días en los que cambie el mes y el año.
  */
-public class Ejer4_Fecha {
+public class Fecha {
 	   private int mes; // 1-12
 	   private int dia;   // 1-31 con base en el mes
 	   private int anio;  // cualquier año
@@ -18,7 +18,7 @@ public class Ejer4_Fecha {
 
 	   // constructor: llama a comprobarMes para confirmar el valor apropiado para el mes; 
 	   // llama a comprobarDia para confirmar el valor apropiado para el día
-	   public Ejer4_Fecha( int elDia, int elMes, int elAnio )
+	   public Fecha( int elDia, int elMes, int elAnio )
 	   {
 		  anio = comprobarAnio (elAnio); // pudo validar el año
 		  mes = comprobarMes ( elMes ); // valida el mes
@@ -74,10 +74,10 @@ public class Ejer4_Fecha {
 		   comprobarDia(this.dia);
 	   }
 	public static void main(String[] args) {
-		Ejer4_Fecha fecha1 = new Ejer4_Fecha(29,2,2012);
-		Ejer4_Fecha fecha2 = new Ejer4_Fecha(1,1,2014);
-		Ejer4_Fecha fecha3 = new Ejer4_Fecha(31,12,2000);
-		Ejer4_Fecha fecha4 = new Ejer4_Fecha(30,9,2020);
+		Fecha fecha1 = new Fecha(29,2,2012);
+		Fecha fecha2 = new Fecha(1,1,2014);
+		Fecha fecha3 = new Fecha(31,12,2000);
+		Fecha fecha4 = new Fecha(30,9,2020);
 
 
 

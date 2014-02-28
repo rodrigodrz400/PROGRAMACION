@@ -6,19 +6,19 @@ package Actividades_4;
 
   a. incremento al siguiente minuto, b. incremento a la siguiente hora, c. incremento al siguiente día.
  */
-public class Ejer2_Tick {
+public class Hora {
 	//Atributos de la clase
 	//private int dia;
 	private int hora;
 	private int min;
 	private int seg;
 	//Constructores
-	 public Ejer2_Tick(){
+	 public Hora(){
 		 this.hora=0;
 		 this.min=0;
 		 this.seg=0;
 	 }
-	 public Ejer2_Tick(int hora, int min, int seg){
+	 public Hora(int hora, int min, int seg){
 		 this.hora=hora;
 		 this.min=min;
 		 this.seg=seg;
@@ -56,7 +56,7 @@ public class Ejer2_Tick {
 		}
 	}
 	
-	public void suma(Ejer2_Tick otro){
+	public void suma(Hora otro){
 		this.hora += otro.getHora();
 		comprobarHora();
 		this.min += otro.getMin();
@@ -85,17 +85,18 @@ public class Ejer2_Tick {
 	}
 	public int getSeg() {
 		return seg;
+	}	
+	public void setHora(int hora) {
+		this.hora = hora;
 	}
-	
-		
 	public static void main(String[] args) {
-		Ejer2_Tick sinhora;
-		Ejer2_Tick mihora;
-		Ejer2_Tick otrahora;
+		Hora sinhora;
+		Hora mihora;
+		Hora otrahora;
 		
-		sinhora = new Ejer2_Tick();
-		mihora=new Ejer2_Tick(12,45,32);
-		otrahora=new Ejer2_Tick(1,15,0);
+		sinhora = new Hora();
+		mihora=new Hora(12,45,32);
+		otrahora=new Hora(1,15,0);
 		
 		System.out.println("Mi hora es: ");
 		sinhora.suma(mihora);
@@ -120,8 +121,8 @@ public class Ejer2_Tick {
 		System.out.println("\nImprimo mi hora. \t " + mihora + "\nImprimo mi otra hora. \t " + otrahora + "\n");
 		
 		System.out.println("Probando incrementos de tiempo");
-		Ejer2_Tick prueba;
-		prueba= new Ejer2_Tick(0,0,0);
+		Hora prueba;
+		prueba= new Hora(0,0,0);
 		
 		for(int i=0; i<65;i++,prueba.incrementarSeg()){
 			System.out.println(prueba);

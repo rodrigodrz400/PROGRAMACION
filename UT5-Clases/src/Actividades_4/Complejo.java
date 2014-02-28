@@ -1,6 +1,5 @@
 package Actividades_4;
 
-import EjerciciosIniciales.NumerosRacionales.Racional;
 
 /*
  Ejercicio 3 Cree una clase llamada Complejo para realizar operaciones aritméticas con números complejos. 
@@ -20,16 +19,16 @@ Producto: (a,b)*(c,d)=(ac-bd,ad-bc)
 Cociente: (a,b)/(c,d)=((ac+bd)/(c2+d2),(bc-ad)/(c2+d2))
 Crea un método para imprimir un número complejo de la forma (a,b), donde a es la parte real y b es la parte imaginaria.
  */
-public class Ejer3_Complejo {
+public class Complejo {
 	//Atributos de clase
 	private double parteReal;
 	private double parteImaginaria;
 	//Constructores
-	public Ejer3_Complejo(){
+	public Complejo(){
 		this.parteReal=0;
 		this.parteImaginaria=0;
 	}
-	public Ejer3_Complejo(double real, double imaginaria){
+	public Complejo(double real, double imaginaria){
 		this.parteReal=real;
 		this.parteImaginaria=imaginaria;
 	}
@@ -42,17 +41,17 @@ public class Ejer3_Complejo {
 	}
 	//Métodos
 		//Suma: (a,b)+(c,d)=(a+c,b+d)
-	public void suma(Ejer3_Complejo otro){
+	public void suma(Complejo otro){
 		this.parteReal = this.parteReal + otro.getParteReal();
 		this.parteImaginaria += otro.getParteImaginaria();
 	}
 		//Resta: (a,b)-(c,d)=(a-c,b-d)
-	public void resta(Ejer3_Complejo otro){
+	public void resta(Complejo otro){
 		this.parteReal -= otro.getParteReal();
 		this.parteImaginaria -= otro.getParteImaginaria();
 	}
 		//Producto: (a,b)*(c,d)=(ac-bd,ad+bc)
-	public void producto(Ejer3_Complejo otro){
+	public void producto(Complejo otro){
 		double parteReal = ((this.parteReal*otro.getParteReal())-(this.parteImaginaria*otro.getParteImaginaria()));
 		double parteImaginaria = ((this.parteReal*otro.parteImaginaria)+(this.parteImaginaria*otro.parteReal));
 		
@@ -60,7 +59,7 @@ public class Ejer3_Complejo {
 		this.parteImaginaria=parteImaginaria;
 	}
 		//Cociente: (a,b)/(c,d)=((ac+bd)/(c2+d2),(bc-ad)/(c2+d2))
-	public void cociente(Ejer3_Complejo otro){
+	public void cociente(Complejo otro){
 		double parteReal = (((this.parteReal*otro.parteReal)+(this.parteImaginaria*otro.parteImaginaria))
 				/((Math.pow(otro.parteReal, 2)+(Math.pow(otro.parteImaginaria,2)))));
 		double parteImaginaria = (((this.parteImaginaria*otro.parteReal)-(this.parteReal*otro.parteImaginaria))
@@ -78,8 +77,8 @@ public class Ejer3_Complejo {
 	}
 	public static void main(String[] args) {
 		
-		Ejer3_Complejo n1 = new Ejer3_Complejo(9,5);
-		Ejer3_Complejo n2 = new Ejer3_Complejo(7,8);
+		Complejo n1 = new Complejo(9,5);
+		Complejo n2 = new Complejo(7,8);
 		
 		System.out.println("Operación de SUMA de los números complejos: ("+ n1.getParteReal()+"+("+n1.getParteImaginaria() +"i)) "
 				+ "- ("+n2.getParteReal()+"+("+n2.getParteImaginaria()+"i))");
