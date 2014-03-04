@@ -35,11 +35,11 @@ public class FechaYhora {
 
 	//Métodos
 	public void siguenteHora(){
-		if(hora.getHora()==23){
-			hora.setHora(0);
-			fecha.siguienteDía();
+		if(this.hora.getHora()==23){
+			this.hora.setHora(0);
+			this.fecha.siguienteDía();
 		}else{
-			hora.incrementarHora();
+			this.hora.incrementarHora();
 		}
 	}
 	public static void main(String[] args) {

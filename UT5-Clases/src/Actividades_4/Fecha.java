@@ -71,10 +71,24 @@ public class Fecha {
 	 // fin de la clase Fecha
 	   public void siguienteDía(){
 		   this.dia++;
-		   comprobarDia(this.dia);
+		   try{
+			   comprobarDia(this.dia);
+		   }catch(IllegalArgumentException iae){
+			   this.dia=1;
+			   this.mes +=1;
+			   if (this.mes >= 12){
+				   this.mes = 1;
+				   this.anio ++;
+				   comprobarAnio(this.anio);
+			   }
+		   }
+		   
 	   }
 	public static void main(String[] args) {
 		Fecha fecha1 = new Fecha(29,2,2012);
+		System.out.println("Sumamos un día a la fecha " + fecha1);
+		fecha1.siguienteDía();
+		System.out.println(fecha1);
 		Fecha fecha2 = new Fecha(1,1,2014);
 		Fecha fecha3 = new Fecha(31,12,2000);
 		Fecha fecha4 = new Fecha(30,9,2020);
