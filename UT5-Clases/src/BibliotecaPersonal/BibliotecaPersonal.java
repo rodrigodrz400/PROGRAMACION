@@ -37,7 +37,7 @@ public class BibliotecaPersonal {
 
 			try {
 				int posicion = teclado.nextInt();
-				if (posicion <= num_libros) {
+				if (posicion <= num_libros && posicion>0) {
 					for (int i = posicion - 1; i < num_libros - 1; i++) {
 						libros[i] = libros[i + 1];
 					}
@@ -55,10 +55,31 @@ public class BibliotecaPersonal {
 								+ " entre las posiciones disponibles.");
 				teclado.nextLine();
 			}
-		
-
 	}
+	public void borrarLibroDesordenado() {
+		System.out.println("Introduce la posición del libro a eliminar:");
+		Scanner teclado = new Scanner(System.in);
 
+			try {
+				int posicion = teclado.nextInt();
+				if (posicion <= num_libros && posicion>0) {
+						if (num_libros >1) libros[posicion - 1] = libros[num_libros-1];
+					
+					libros[num_libros - 1] = null;
+					num_libros--;
+					System.out.println("El libro ha sido eliminado");
+				} else {
+					System.out
+							.println("Error: Esta indicando una posición que se encuentra vacia.");
+				}
+				
+			}catch (InputMismatchException e) {
+				System.err
+						.println("Error: Debe introducir un valor númerico comprendido"
+								+ " entre las posiciones disponibles.");
+				teclado.nextLine();
+			}
+	}
 	public String toString() {
 		String cadena;
 
@@ -111,7 +132,21 @@ public class BibliotecaPersonal {
 		} while (continuarCiclo == true);
 		return respuesta;
 	}
+	public  Libro crearNuevoLibro() {
+		Libro libroNuevo;
+		Scanner teclado = new Scanner(System.in);
 
+		System.out.println("Dime el nombre:");
+		String nombre = teclado.nextLine();
+		System.out.println("Dime el autor:");
+		String autor = teclado.nextLine();
+		System.out.println("Dime el isbn:");
+		String isbn = teclado.nextLine();
+
+		libroNuevo = new Libro(nombre, autor, isbn);
+
+		return libroNuevo;
+	}
 	public static void main(String[] args) {
 
 		BibliotecaPersonal miBiblioteca;
@@ -135,11 +170,12 @@ public class BibliotecaPersonal {
 				miBiblioteca.listarLibros();
 				break;
 			case 2:
-				Libro l = crearNuevoLibro();
+				Libro l = miBiblioteca.crearNuevoLibro();
 				miBiblioteca.añadirLibro(l);
 				break;
 			case 3:
-				miBiblioteca.borrarLibro();
+				//miBiblioteca.borrarLibro();
+				miBiblioteca.borrarLibroDesordenado();
 				break;
 			case 4:
 				System.out.println("FIN DEL PROGRAMA: Biblioteca Personal.");
@@ -148,20 +184,6 @@ public class BibliotecaPersonal {
 
 	}
 
-	public static Libro crearNuevoLibro() {
-		Libro libroNuevo;
-		Scanner teclado = new Scanner(System.in);
 
-		System.out.println("Dime el nombre:");
-		String nombre = teclado.nextLine();
-		System.out.println("Dime el autor:");
-		String autor = teclado.nextLine();
-		System.out.println("Dime el isbn:");
-		String isbn = teclado.nextLine();
-
-		libroNuevo = new Libro(nombre, autor, isbn);
-
-		return libroNuevo;
-	}
 
 }
