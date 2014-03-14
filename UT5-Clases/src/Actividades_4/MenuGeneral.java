@@ -1,5 +1,6 @@
 package Actividades_4;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -102,11 +103,16 @@ public class MenuGeneral {
 		int respuesta = 0;
 		do{
 			mostarMenu();
-			respuesta = teclado.nextInt();
-			if(respuesta < 0 || respuesta > this.indice){
-				System.out.println("Ha introducido un valor que no existe "
-						+ "entre el rango de opciones disponibles \n");
-			}
+			try{
+				respuesta = teclado.nextInt();
+				if(respuesta < 0 || respuesta > this.indice){
+					System.out.println("Ha introducido un valor que se encuentra "
+							+ "fuera del rango de opciones disponibles \n");
+				}
+			}catch(InputMismatchException e){
+				System.out.println("Error: No ha introducido un valor númerico \n");
+				teclado.nextLine();
+			}	
 		}while(respuesta <= 0 || respuesta > this.indice);
 		if (respuesta == this.indice){
 			respuesta = 0;
