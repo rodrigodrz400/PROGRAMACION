@@ -42,7 +42,7 @@ public class E3Palindromo {
 		System.out.println("----------FIN DEL PROGRAMA----------");
 	}
 
-	public static boolean comprobar(String palabra) {
+	private static boolean comprobar(String palabra) {
 		if (palabra.length() == 1 || palabra.length() == 0)
 			return true;
 		else {
