@@ -24,10 +24,12 @@ public class MenuGeneral {
 	protected int opcion;
 	protected Scanner teclado;
 	
+	protected static final int MAX_OPCIONES = 15;
+	
 	//Constructores
 		//¿Qué atributos y con que valores iniciales, queremos que nuestro MenuGeneral se muestre?
 	public  MenuGeneral(){
-		this.opciones = new String[15];
+		this.opciones = new String[MAX_OPCIONES];
 		this.elijaUnaOpcion = "-->Elija una Opción:";
 		this.indice=0;
 		this.opcion = 0;
@@ -55,23 +57,14 @@ public class MenuGeneral {
 	public void setSalida(String textoIndicadorDeOpciones) {
 		this.elijaUnaOpcion = textoIndicadorDeOpciones;
 	}
-	public int getIndice() {
+	public int getNumeroOpciones() {
 		return indice;
-	}
-	public void setIndice(int indice) {
-		this.indice = indice;
 	}
 	public int getOpcion() {
 		return opcion;
 	}
 	public void setOpcion(int opcion) {
 		this.opcion = opcion;
-	}
-	public Scanner getTeclado() {
-		return teclado;
-	}
-	public void setTeclado(Scanner teclado) {
-		this.teclado = teclado;
 	}
 	//Métodos de clase o Servicios que presta nuestro MenuGeneral
 	/*
@@ -83,8 +76,10 @@ public class MenuGeneral {
 	 */
 	//Crearemos el método para añadir "opciones" (de tipo String) a nuestro MenuGeneral
 	public void añadirOpcion(String opcion){
-		this.opciones[this.indice] = ""+ (this.indice + 1) +".-" + opcion;
+		if (this.opciones.length > this.indice){
+		this.opciones[this.indice] =  opcion;
 		this.indice++;
+		}
 	}
 	//Crearemos un método de "Salir" para diferenciarlo un poco del resto de opciones del MenuGeneral
 	public void añadirSalir(String textoIndicadorDeSalir){
@@ -94,7 +89,7 @@ public class MenuGeneral {
 	//opciones[], y mostrará el "prompt" -->Elija una opcion
 	public void mostarMenu(){
 		for(int i = 0; i < this.indice; ++i){
-			System.out.println(this.opciones[i]);
+			System.out.println(""+ (i + 1) +".-" +this.opciones[i]);
 		}
 		System.out.print(this.elijaUnaOpcion);
 	}
