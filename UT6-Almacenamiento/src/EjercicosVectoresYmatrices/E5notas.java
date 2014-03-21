@@ -15,9 +15,12 @@ public class E5notas {
 	    for (int anterior = 0; anterior < vector.length - 1; anterior++) {
 	        for (int posterior = anterior + 1; posterior < vector.length; posterior++) {
 	            if (vector[anterior] < vector[posterior]) {
-	                aux = vector[anterior];
+	            	aux = vector[anterior];
 	                vector[anterior] = vector[posterior];
 	                vector[posterior] = aux;
+	            }
+	            if(vector[anterior] == vector[posterior]){
+	                vector[posterior] = 0;
 	            }
 	        }
 	    }
@@ -28,19 +31,29 @@ public class E5notas {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner (System.in);
 		
-		int tamaño = 8;
-		int vector[] = new int[tamaño];
+		int tamañoInicial = 8;
+		int tamañoFinal = tamañoInicial;
+		int vector[] = new int[tamañoInicial];
 		
 		System.out.println("Inserte las notas que desea ordenar (desc).");
-		for (int i=0; i<tamaño; i++){
+		for (int i=0; i<tamañoInicial; i++){
 		vector[i]= teclado.nextInt();
 		}
 		
 		teclado.close();
 
 		ordenarArray(vector);
+		for (int i=0; i<tamañoInicial; i++){
+			if (vector[i]==0){
+				tamañoFinal--;
+			}
+		}
+		int vectorSalida[] = new int [tamañoFinal];
+		for (int i=0; i<tamañoFinal; i++){
+			vectorSalida[i]=vector[i];
+		}
 		
-		System.out.println("Vector orenado de mayor a menor: " + Arrays.toString(vector));
+		System.out.println("Vector orenado de mayor a menor: " + Arrays.toString(vectorSalida));
 		
 		
 	}
