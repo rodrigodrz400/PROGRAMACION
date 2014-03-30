@@ -1,5 +1,7 @@
 package EjerciciosArrays;
 
+import java.util.Scanner;
+
 public class E4NumeroCaracteres {
 /*
  Ejerciccio 4 Realiza un programa que pida al usuario la introducción de un carácter hasta que 
@@ -17,8 +19,33 @@ public class E4NumeroCaracteres {
 			Utiliza arrays para hacer el ejercicio.
  */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner teclado = new Scanner (System.in);
+		
+		char[]caracteres;
+		char []comprobar;
+		String caracter ="";
+		String cadena ="";
+		String imprimir = ""; 
+		int contador = 0;
+		int c = 0;
+		
+		do{
+		System.out.println("Introduzca caracteres para contar el número de repetidos: ");
+		caracter =  teclado.next();
+		cadena += caracter;
+		c++;	
+		}while(!(caracter.equals("@")));
+		
+		caracteres = new char [c];
+		comprobar = new char [c];
+		
+		for (int i = 0; i < cadena.length()-1; i++) {
+			caracteres[i] = (char) cadena.charAt(i);
+			comprobar[i] = (char) cadena.charAt(i);
+		}
+		
+		
+		System.out.println(imprimir);
 	}
 
 }

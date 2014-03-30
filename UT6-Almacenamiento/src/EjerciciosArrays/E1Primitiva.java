@@ -8,7 +8,7 @@ public class E1Primitiva {
 	// una quiniela
 	// primitiva controlando que no se repita ninguno de ellos.
 
-	static int[] primitiva;
+
 
 	public static void main(String[] args) {
 		int primitiva[] = new int[6];

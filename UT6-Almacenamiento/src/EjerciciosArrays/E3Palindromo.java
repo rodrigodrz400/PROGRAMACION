@@ -10,13 +10,14 @@ public class E3Palindromo {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		
+
 		String numero;
-		
+
 		do {
 			String palabra = "";
-			System.out.println("Introduzca un número para comprobar si es o no palíndromo:"
-								+ "\t(para salir pulse 0)");
+			System.out
+					.println("Introduzca un número para comprobar si es o no palíndromo:"
+							+ "\t(para salir pulse 0)");
 			numero = teclado.next();
 
 			char[] caracteres = new char[numero.length()];
