@@ -20,7 +20,7 @@ public class E7matrizEnteros {
 
 		for (int i = 0; i < filas; i++) {
 			for (int j = 0; j < columnas; j++) {
-				System.out.println("Introduzca un caracter para la [fila "
+				System.out.println("Introduzca un numero entero para la [fila "
 						+ (i+1) + " - columna " + (j+1) + "].");
 				matriz[i][j] = teclado.nextInt();
 			}

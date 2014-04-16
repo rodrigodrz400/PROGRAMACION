@@ -362,13 +362,28 @@ public class Pelicula {
 			        	
 			        } while (!encontrada);		
 				}		
-			}	
+			}
+			private static boolean deseaContinuar(){
+				boolean finalizar = false;
+				
+				System.out.print("Desea realizar alguna otra operación[s/n]");
+				String respuesta = teclado.next();
+				if(respuesta.equalsIgnoreCase("n")) finalizar = true;
+				
+				return finalizar;
+			}
 
 			public static void main(String[] args) {		
 				
 				teclado = new Scanner(System.in);
-				menuPrincipal();
+				boolean finalizar= true;
+				do{
+					System.out.println("Imprime texto");
+					finalizar=deseaContinuar();
+				}while(!finalizar);
+				//menuPrincipal();
 				teclado.close();
+				
 			}
 
 		}

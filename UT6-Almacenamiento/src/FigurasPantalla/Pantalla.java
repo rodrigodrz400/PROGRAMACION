@@ -71,15 +71,15 @@ public class Pantalla {
 		
 		// Con esto pinto dos lineas verticales paralelas.
 		for (int i = fila1; i <= fila2; i++) {
-			pixeles[i][columna1] = caracter;
-			pixeles[i][columna2] = caracter;
-		}
+			pixeles[i][columna1] = 	this.caracter;
+			pixeles[i][columna2] = 	this.caracter;
 		// me queda pintar las lineas horinzontales paralelas.
-		for (int i = fila1; i < columna2; i++) {
-			pixeles[fila1][i] = caracter;
-			pixeles[fila2][i] = caracter;
+		for (int j = fila1; j < columna2; j++) {
+			pixeles[fila1][j] = this.caracter;
+			pixeles[fila2][j] = this.caracter;
 		}
 		System.out.print("\n");
+		}
 	}
 
 	public void imprimeRectangulo(int fila1, int columna1, int ancho, int alto) {

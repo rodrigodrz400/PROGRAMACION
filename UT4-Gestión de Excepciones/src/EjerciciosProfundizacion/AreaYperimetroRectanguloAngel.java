@@ -43,14 +43,14 @@ public class AreaYperimetroRectanguloAngel {
                   lados[i] = leerLadoPositivo();
 
              
-             System.out.println("=========== R E S U L T A D O S ===========");
+             System.out.println("\n=========== R E S U L T A D O S ===========");
              
              for ( int i = 0; i < lados.length; ++i ) {
                      
-                     System.out.printf("Lado nº %d: %.2f\n", (i+1), lados[i]);
+                     System.out.printf("===\tLado nº %d: %15.2f\t===\n", (i+1), lados[i]);
              }
              
-             System.out.printf("PERIMETRO: %.2f\n", (lados[0] + lados[1]) * 2 );
-             System.out.printf("AREA: %.2f\n", lados[0] * lados[1] );                
+             System.out.printf("===\tPERIMETRO: %15.2f\t===\n", (lados[0] + lados[1]) * 2 );
+             System.out.printf("===\tAREA: %20.2f\t===\n", lados[0] * lados[1] );                
      }
 }

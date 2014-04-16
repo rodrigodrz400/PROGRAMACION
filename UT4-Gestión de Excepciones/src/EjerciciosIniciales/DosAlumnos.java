@@ -17,6 +17,7 @@ public class DosAlumnos {
 	 */
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
+		Scanner teclado2 = new Scanner(System.in);
 
 		String nombre1 = "";
 		int edad1 = 0;
@@ -68,34 +69,34 @@ public class DosAlumnos {
 		do {
 			try {
 				System.out.println("Introduzca su nombre: ");
-				nombre2 = teclado.nextLine();
+				nombre2 = teclado2.nextLine();
 				continuarCiclo=false;
 			} catch (IllegalStateException  | NoSuchElementException e) {
 				System.err.println("Error: " + e.getMessage());
-				teclado.nextLine();
+				teclado2.nextLine();
 				continuarCiclo = true;
 			}
 		} while (continuarCiclo == true);
 		do {
 			try {
 				System.out.println("Introduzca su edad: ");
-				edad2 = teclado.nextInt();
+				edad2 = teclado2.nextInt();
 				continuarCiclo=false;
 			} catch (InputMismatchException e) {
 				System.err.println("Error: El número introducido no es un número entero. ");
-				teclado.nextLine();
+				teclado2.nextLine();
 				continuarCiclo = true;
 			}
 		} while (continuarCiclo == true);
 		do {
 			try {
 				System.out.println("Introduzca su altura: ");
-				altura2 = teclado.nextDouble();
-				teclado.nextLine();
+				altura2 = teclado2.nextDouble();
+				teclado2.nextLine();
 				continuarCiclo = false;
 			} catch (InputMismatchException e) {
 				System.err.println("Error: El número introducido no es un un número real ");
-				teclado.nextLine();
+				teclado2.nextLine();
 				continuarCiclo = true;
 			}
 		} while (continuarCiclo == true);

@@ -12,23 +12,26 @@ dependiendo de lo que el usuario eligiera.
  */
 public class Continuar {
 
-	public static void preguntaContinuar(){
+	public static String preguntaContinuar(){
 		Scanner teclado = new Scanner (System.in);
-		String resp;
+		String resp = teclado.nextLine();
 		
-		do{
+
 			System.out.println("¿Desea continuar (s/n)?");
-			resp = teclado.next();
+			resp = teclado.next().toLowerCase();
 			if( (!resp.equals("s"))  && (!resp.equals("n")) ){
 				System.out.println("Respuesta incorrecta, utilice solamente los "
 									+ "caracteres indicados en la parte superior \n");
 			}
-		}while( (!resp.equals("s"))  && (!resp.equals("n")) );
-		teclado.close();	
+		teclado.close();
+		return resp;
 	}
 	public static void main(String[] args) {
 		
-		preguntaContinuar();
+		do{
+			System.out.println("Texto escrito otra vez");
+		}while(!preguntaContinuar().equals("s"));
+		
 		
 	}
 

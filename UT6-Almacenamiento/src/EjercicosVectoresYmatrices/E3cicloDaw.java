@@ -19,7 +19,7 @@ public class E3cicloDaw {
 							"Entornos de Desarrollo.","Acceso a Datos."};
 		int [] alumnos = {21,17,30,14,12,25};
 		
-		for(int i=0; i<6; i++){
+		for(int i=0; i<modulos.length; i++){
 			System.out.println(alumnos[i] + " alumnos matriculados en " + modulos[i]);
 		}
 		

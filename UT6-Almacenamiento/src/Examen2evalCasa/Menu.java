@@ -1,8 +1,8 @@
-package Actividades_4;
+package Examen2evalCasa;
 
 import java.util.Scanner;
 
-public class Menu2 {
+public class Menu {
 
 	private String[] opciones;
 	private int num_opciones;
@@ -10,12 +10,12 @@ public class Menu2 {
 
 	private final static int MAX_OPCIONES = 20;
 
-	public Menu2() {
+	public Menu() {
 		opciones = new String[MAX_OPCIONES];
 		titulo = "Menú";
 	}
 
-	public Menu2(String[] opciones, int num_opciones) {
+	public Menu(String[] opciones, int num_opciones) {
 		this.opciones = new String[MAX_OPCIONES];
 		for (int i = 0; i < num_opciones; i++)
 			this.opciones[i] = opciones[i];
@@ -60,11 +60,11 @@ public class Menu2 {
 
 	public static void main(String[] args) {
 
-		Menu2 menu1;
+		Menu menu1;
 
 		String[] opciones = { "Uno", "Dos", "Tres" };
 
-		menu1 = new Menu2(opciones, 2);
+		menu1 = new Menu(opciones, 3);
 
 		System.out.println("Ha seleccionado " + menu1.imprimirYPreguntar());
 
