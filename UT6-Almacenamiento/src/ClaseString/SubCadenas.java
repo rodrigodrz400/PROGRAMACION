@@ -21,11 +21,18 @@ public class SubCadenas {
 		}
 		
 		for(int i=0; i<subCadena.length;i++){
-			if(frase.startsWith(subCadena[i])){
-				System.out.println("\nLa frase comienza por " + subCadena[i]);
-			}else if (frase.endsWith(subCadena[i])){
+			boolean comienza, termina;
+			
+			comienza=frase.startsWith(subCadena[i]);
+			termina= frase.endsWith(subCadena[i]);
+			
+			if(comienza && termina){
+				System.out.println("\nLa frase comienza y termina por " + subCadena[i]);
+			}else if (comienza && !termina){
+				System.out.println("La frase comienza por " + subCadena[i]);
+			}else if (comienza && termina){
 				System.out.println("La frase termina por " + subCadena[i]);
-			}
+			}else System.out.println("La frase no comienza ni termina por " + subCadena[i] );
 		}
 
 	}

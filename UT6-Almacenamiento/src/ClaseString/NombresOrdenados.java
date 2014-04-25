@@ -24,7 +24,26 @@ public class NombresOrdenados {
 		}
 	}while(continuar==true);
 	
-	Arrays.sort(nombres);
+	//Arrays.sort(nombres);
+	
+	for(int i=0; i<numNombres -1;i++){ //algoritmo de selección por el menor
+		String menor;
+		int posMenor;
+		
+		menor= nombres[i];
+		posMenor=i;
+		for(int j=i+1; j<numNombres; j++){
+			if (menor.compareTo(nombres[j]) > 0){
+				menor=nombres[j];
+				posMenor=j;
+			}
+		}
+		String aux = nombres[i];
+		nombres[i] = nombres[posMenor];
+		nombres[posMenor]=aux;
+		
+	}
+	
 	System.out.println("Los nombres introducidos ordenados alfabéticamente son: " + Arrays.toString(nombres));
 
 	}

@@ -4,47 +4,49 @@ import java.util.Scanner;
 
 public class CadenaAsteriscos {
 
-	// Escribe un programa que pida una cadena. Posteriormente, el programa dejará
-	// que el usuario inserte varios caracteres hasta que inserte un asterisco, con
+	// Escribe un programa que pida una cadena. Posteriormente, el programa
+	// dejará
+	// que el usuario inserte varios caracteres hasta que inserte un asterisco,
+	// con
 	// el fin de informar, para cada carácter, si la cadena lo contiene y en qué
 	// posición está el primero.
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner(System.in);
-		String frase;
-		int contador = 0;
+
+		String cadena;
+		String[] subcadenas = new String[50];
 		String caracter;
-		String caracteres = "";
-		
 
-		System.out.println("Introduzca una frase: ");
-		frase = teclado.nextLine();
+		Scanner teclado = new Scanner(System.in);
 
-		
-		do{
-			System.out.println("Inserte caracteres para completar la frase anterior: (para salir pulse *)");
-			caracter=teclado.next();
-			caracteres += caracter;	
-			contador++;
-		}while(!(caracter.equals("*")));
-		
-		frase += caracteres;
-		
-		char [] ArrayCaracteres = new char [frase.length()];
-		
-		for (int i = 0; i < frase.length()-1; i++) {
-			ArrayCaracteres[i] = (char) frase.charAt(i);
-		}
-		
-		
-		for (int i = 0; i < frase.length(); i++) {
-			for (int j = 0; j < ArrayCaracteres.length; j++) {
-				if (frase.charAt(i)==(ArrayCaracteres[j]))
-				System.out.println("\nEl caracter-" + ArrayCaracteres[j] + "- se encuentra en la " 
-				+ (i+1) + "ª de la frase:\n" + "-->\t" + frase);
+		System.out.println("Introduce una cadena");
+		cadena = teclado.nextLine();
+
+		int i = 0;
+		int posicion;
+
+		System.out.println("Escribe * para dejar de introducir caracteres");
+
+		do {
+			System.out.println("Dame un caracter: ");
+			caracter = teclado.next();
+
+			if (!caracter.equals("*")) {
+				subcadenas[i] = caracter;
+				posicion = cadena.indexOf(subcadenas[i]);
+
+				if (posicion >= 0) {
+					System.out.println("La cadena contiene " + subcadenas[i]
+							+ " en la posicion " + posicion);
+				} else
+					System.out
+							.println("La cadena no contiene " + subcadenas[i]);
 			}
-		}
-		
-		
+
+			i++;
+
+		} while (!caracter.equals("*"));
+
+		System.out.println("Fin");
 	}
 
 }
