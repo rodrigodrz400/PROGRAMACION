@@ -9,6 +9,7 @@ public class EncontrarSubCadena {
 		System.out.println("escribe una cadena: ");
 		String cadena = teclado.nextLine();
 		String[] subcadenas = new String[5];
+		
 		for (int i = 0; i < 5; i++) {
 			System.out.println("inserte subcadena: ");
 			subcadenas[i] = teclado.nextLine();
