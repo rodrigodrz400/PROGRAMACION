@@ -20,11 +20,7 @@ public class E3ContarPalabras {
 		
 		String[] palabras = frase.split(" ");
 		
-		for(int i=0; i<palabras.length;i++){
-			contador++;
-		}
-		
-		System.out.println("La frase contiene: " + contador + " palabras.");
+		System.out.println("La frase contiene: " + palabras.length + " palabras.");
 		
 
 	}

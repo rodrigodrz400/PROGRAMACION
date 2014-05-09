@@ -14,7 +14,7 @@ public class E4CifradoCesar {
 	 * ser "Krñd".
 	 */
 	private static Scanner teclado;
-	private static String abecedario = "abcdefghijklmnñopqrstuvwxyz";
+	private static final String abecedario = "abcdefghijklmnñopqrstuvwxyz";
 	private static String palabra = "";
 	private static int mostrarMenu() {
 

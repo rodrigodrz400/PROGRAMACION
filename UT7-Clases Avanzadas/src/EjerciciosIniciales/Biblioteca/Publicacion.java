@@ -38,6 +38,9 @@ public class Publicacion {
 		this.fecha = fecha;
 	}
 	
+	public String toString(){
+		return this.editor + " " + this.fecha;
+	}
 	
 	
 }

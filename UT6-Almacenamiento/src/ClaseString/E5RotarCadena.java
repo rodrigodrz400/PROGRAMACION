@@ -12,16 +12,19 @@ public class E5RotarCadena {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 		
-		String cadena;
+		String cadena = null;
 		String cadenaAux;
-		int pos;
-
+		int pos = 0;
+		
+		
 		
 		System.out.println("Introduce una frase");
 		cadena = teclado.nextLine();
 		System.out.println("Indique el número de posiciones que desea rotar en la cadena:");
 		pos = teclado.nextInt();
-
+		
+		pos=pos%cadena.length();
+		
 		cadenaAux=cadena.substring(cadena.length()-pos, cadena.length());
 		cadena= cadena.substring(0,cadena.length()-pos);
 		
