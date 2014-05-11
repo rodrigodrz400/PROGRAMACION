@@ -35,7 +35,7 @@ public class Rectangulo extends Cuadrado {
 		if (largo > 0 ){
 			this.alto=largo;
 		}else{
-			this.alto = 12;
+			this.alto = LADO_PREDEFINIDO;
 		}
 	}
 
@@ -48,10 +48,10 @@ public class Rectangulo extends Cuadrado {
 	}
 
 	
-	public int areaRectangulo(){
+	public int area(){
 		return getAncho() * this.alto;			
 	}
-	public int perimetroRectangulo(){
+	public int perimetro(){
 		return ((getAncho()*2) + (this.alto*2));
 	}
 	public String orientacion(){
@@ -64,13 +64,18 @@ public class Rectangulo extends Cuadrado {
 		}
 		return "La orientación del rectángulo es: " + orientacion+ ".";
 	}
+	public boolean esHorizontal(){
+		boolean orientacion;
+		
+		if (getAncho() < this.alto){
+			orientacion=true;
+		}else{
+			orientacion= false;
+		}
+		return orientacion;
+	}
 	
 	public void dibujar(){
-		for(int i=0; i<getAncho(); i++){
-			for(int j=0; j<this.alto; j++){
-				System.out.print("* ");
-			}
-			System.out.println();
-		}
+		dibujarGeneral(getAncho(),this.alto);
 	}
 }

@@ -7,5 +7,6 @@ public class Gato extends Mamifero {
 		super(clienteNomb, clienteDirec, nombre, peso, fechaNac, raza);
 		
 	}
+	
 
 }

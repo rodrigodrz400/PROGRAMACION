@@ -24,16 +24,18 @@ Otro método que dibuje en pantalla el cuadrado mediante asteriscos, utilizando t
 public class Cuadrado {
 
 	private int ancho;
+	protected static final int LADO_PREDEFINIDO=3;
 	
 	public Cuadrado (){
-		this.ancho=3;
+		this.ancho=LADO_PREDEFINIDO;
 	}
 	public Cuadrado (int ancho){
 		if(ancho>0){
 			this.ancho=ancho;
 		}else{
-			this.ancho=3;
-		}	
+			this.ancho=LADO_PREDEFINIDO;
+		}
+		//this.ancho = (ancho>0)? ancho:ANCHO_PREDEFINIDO;
 	}
 	public int getAncho() {
 		return ancho;
@@ -41,22 +43,23 @@ public class Cuadrado {
 	public void setAncho(int ancho) {
 		this.ancho = ancho;
 	}
-	public int areaCuadrado(){
+	public int area(){
 		return (int)Math.pow(this.ancho, 2);			
 	}
-	public int perimetroCuadrado(){
+	public int perimetro(){
 		return this.ancho*4;
 	}
-	public void dibujar(){
+	protected void dibujarGeneral(int ancho, int largo){
 		for(int i=0; i<this.ancho; i++){
-			for(int j=0; j<this.ancho; j++){
+			for(int j=0; j<largo; j++){
 				System.out.print("* ");
 			}
 			System.out.println();
 		}
 	}
-	
-	
-	
+	public void dibujar(){
+		dibujarGeneral(ancho,ancho);
+	}
+
 	
 }

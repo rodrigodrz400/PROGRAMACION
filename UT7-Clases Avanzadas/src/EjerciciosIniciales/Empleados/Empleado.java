@@ -7,17 +7,11 @@ package EjerciciosIniciales.Empleados;
  por hora y las horas trabajadas. Debe haber un método calculaSalarioSemanal que se puede aplicar
  a ambos.
  */
-public class Empleado {
+public abstract class Empleado {
 
 	//Atributos
 	private String nombre;
 	private String ocupacion;
-	
-	//Constructor
-	public Empleado(String nombre, String ocupacion){
-		this.nombre=nombre;
-		this.ocupacion=ocupacion;			
-	}
 		
 	//Accesadores
 	public String getNombre() {
@@ -32,5 +26,7 @@ public class Empleado {
 	public void setOcupacion(String ocupacion) {
 		this.ocupacion = ocupacion;
 	}
+	public abstract double calcularSalarioSemanal();
+	
 	
 }

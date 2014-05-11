@@ -6,12 +6,6 @@ public class EmpHoras extends Empleado {
 	private double precioHora;
 	private double horasTrabajadas;
 
-	// Constructores
-	public EmpHoras(String nombre, String ocupacion, double precioHora, double horasTrabajadas) {
-		super(nombre, ocupacion);
-		this.precioHora = precioHora;
-		this.horasTrabajadas = horasTrabajadas;
-	}
 
 	// Metodos
 	public double calcularSalarioSemanal() {

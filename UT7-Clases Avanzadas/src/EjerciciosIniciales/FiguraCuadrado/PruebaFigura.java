@@ -11,8 +11,8 @@ public class PruebaFigura {
 		System.out.println("CUADRADO de (filas por columnas): " + cuadrado.getAncho()+" x "
 							+ cuadrado.getAncho());
 		cuadrado.dibujar();
-		System.out.println("El area del cuadrado es: " + cuadrado.areaCuadrado());
-		System.out.println("El perímetro del cuadrado es: " + cuadrado.perimetroCuadrado());
+		System.out.println("El area del cuadrado es: " + cuadrado.area());
+		System.out.println("El perímetro del cuadrado es: " + cuadrado.perimetro());
 		
 		System.out.println("\n");
 		
@@ -20,13 +20,12 @@ public class PruebaFigura {
 		System.out.println("RECTANGULO de (filas por columnas): "+ rectangulo.getAncho() +" x "
 							+rectangulo.getLargo());
 		rectangulo.dibujar();
-		System.out.println("El area del rectangulo es: " + rectangulo.areaRectangulo());
-		System.out.println("El perímetro del rectangulo es: " + rectangulo.perimetroRectangulo());
+		System.out.println("El area del rectangulo es: " + rectangulo.area());
+		System.out.println("El perímetro del rectangulo es: " + rectangulo.perimetro());
 		System.out.println(rectangulo.orientacion());
+		System.out.println("¿El rectangulo es horizontal? "+rectangulo.esHorizontal());
 		
-		
-		
-		
+
 
 	}
 

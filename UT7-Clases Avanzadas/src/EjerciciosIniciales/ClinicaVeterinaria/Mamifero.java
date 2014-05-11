@@ -11,4 +11,10 @@ public class Mamifero extends Animales {
 		this.raza=raza;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() +  "Mamifero [raza=" + raza + "]";
+	}
+	
+
 }

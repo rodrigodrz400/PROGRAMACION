@@ -27,4 +27,12 @@ public class Animales {
 		this.peso=peso;
 		this.fechaNac=fechaNac;
 	}
+
+	@Override
+	public String toString() {
+		return "Animales [peso=" + peso + ", nombre=" + nombre + ", fechaNac="
+				+ fechaNac + ", clienteNomb=" + clienteNomb + ", clienteDirec="
+				+ clienteDirec + "]";
+	}
+	
 }
