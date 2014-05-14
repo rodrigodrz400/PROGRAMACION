@@ -12,14 +12,14 @@ public class SmartPhone extends Aparato {
 	private String[] tecTransm;
 
 	public SmartPhone(String numProducto, String numSerie, String nombre,
-			String so) {
-		super(numProducto, numSerie, nombre, so);
-		this.tecTransm = tecTransm;
+			String so, double precioBase, int numTecnologias) {
+		super(numProducto, numSerie, nombre, so, precioBase);
+		this.tecTransm = new String [numTecnologias];
 	}
-
 	public String[] getTecTransm() {
 		return tecTransm;
 	}
+
 
 	public void setTecTransm(String[] tecTransm) {
 		this.tecTransm = tecTransm;
@@ -38,32 +38,17 @@ public class SmartPhone extends Aparato {
 	// Debe ser independiente de mayúscular/minúsculas y controlar que la misma
 	// tecnología no se repita.
 	public void addTecnologia(String tecnologia) {
-		Scanner teclado = new Scanner(System.in);
-		int tec;
-		String aux;
-		System.out
-				.println("Indique el valor numerico de las tecnologias inalámbricas "
-						+ "soportadas por el dispositivo");
-		tec = teclado.nextInt();
 
-		System.out
-				.println("Escriba las tecnologias que uliliza el dispositivo:");
-		for (int i = 0; i < tec; i++) {
-			System.out.println("Tecnología " + i + ": ");
-			aux = teclado.nextLine();
-			for (int j = 0; j < tecTransm.length; j++) {
-				if (tecTransm[j].toLowerCase() == aux.toLowerCase()) {
-					tecTransm[j] = aux;
-				} else {
+			for (int i = 0; i < tecTransm.length; i++) {
+				if (tecTransm[i].toLowerCase() == tecnologia.toLowerCase()) {
 					System.out.println("El valor introducido ya se encuentra registrado");
 					i--;
+				} else {
+					tecTransm[i] = tecnologia;
 				}
-
 			}
-
 		}
-	}
-	
+
 	
 	
 }
