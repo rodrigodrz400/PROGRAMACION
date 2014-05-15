@@ -18,7 +18,6 @@ public class Aparato {
 		this.SO = so;
 		this.precioBase=precioBase;
 	}
-
 	public String getNumProducto() {
 		return numProducto;
 	}
@@ -64,7 +63,8 @@ public class Aparato {
 				+ "\nSistema Operativo-->	" + SO 
 				+ "\nNúmero de serie-->	" + numSerie
 				+ "\nNúmero de Producto-->	" + numProducto
-				+ "\nPrecio final-->  " + precioPVP();
+				+ "\nPrecio Base-->  " + String.format("%.2f",precioBase);
+				
 	}
 	/*
 	 Como el precio puede variar, la clase Aparato tendrá definirá los métodos siguientes:

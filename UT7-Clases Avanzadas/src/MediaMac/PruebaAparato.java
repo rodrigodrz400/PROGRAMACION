@@ -1,5 +1,7 @@
 package MediaMac;
 
+import java.util.Arrays;
+
 public class PruebaAparato {
 
 	/*
@@ -14,8 +16,18 @@ public class PruebaAparato {
 		aparatos = new Aparato [100];
 		
 		SmartPhone iphone4 = new SmartPhone("10","001","Iphone 4 negro","IOS",300,2);
+		iphone4.preciopPVPRebajado(15);
 		iphone4.addTecnologia("GPRS");
 		iphone4.addTecnologia("3G");
+		iphone4.addTecnologia("5G");
+		
+		SmartPhone XperiaJ = new SmartPhone("5","002","Sony Xperia J St26i Blanco","Android",119.5,5);
+		XperiaJ.preciopPVPRebajado(15);
+		XperiaJ.addTecnologia("GPRS");
+		XperiaJ.addTecnologia("3G");
+		
+		System.out.println(iphone4);
+		System.out.println(XperiaJ);
 		
 		//SmartPhone XperiaJ= new SmartPhone("5","002","Sony Xperia J St26i Blanco","Android",119);
 		//SmartPhone HiesenseHS = new SmartPhone("2","003","Hisense HS-U980 Blanco","Android",179);
