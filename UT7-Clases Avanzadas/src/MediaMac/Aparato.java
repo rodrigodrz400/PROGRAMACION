@@ -79,7 +79,7 @@ public class Aparato {
 		return precioFinal;
 	}
 	public double preciopPVPRebajado(double rebajaPorc){
-		double rebajaNum = (rebajaPorc/100)+1 ;
+		double rebajaNum = 1-(rebajaPorc/100);
 		double precioFinal=precioPVP() * rebajaNum;
 		
 		return precioFinal;

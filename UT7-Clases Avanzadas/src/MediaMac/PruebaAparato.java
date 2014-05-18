@@ -1,6 +1,5 @@
 package MediaMac;
 
-import java.util.Arrays;
 
 public class PruebaAparato {
 
@@ -16,7 +15,8 @@ public class PruebaAparato {
 		aparatos = new Aparato [100];
 		
 		SmartPhone iphone4 = new SmartPhone("10","001","Iphone 4 negro","IOS",300,2);
-		iphone4.preciopPVPRebajado(15);
+		iphone4.setPrecioBase(250);
+		
 		iphone4.addTecnologia("GPRS");
 		iphone4.addTecnologia("3G");
 		iphone4.addTecnologia("5G");
@@ -25,9 +25,22 @@ public class PruebaAparato {
 		XperiaJ.preciopPVPRebajado(15);
 		XperiaJ.addTecnologia("GPRS");
 		XperiaJ.addTecnologia("3G");
+		XperiaJ.addTecnologia("gprs");
 		
-		System.out.println(iphone4);
-		System.out.println(XperiaJ);
+		Tableta nexus = new Tableta ("34","003","Nexus 7","Adroid 4.4",340,7.0,400);
+		Tableta ipad = new Tableta ("36","004","iPAD air","iOS",700,9.7,250);
+
+		aparatos[0]=iphone4;
+		aparatos[1]=nexus;
+		aparatos[2]=XperiaJ;
+		aparatos[3]=ipad;
+		
+		for (int i=0; i<4;i++){
+			System.out.println();
+			System.out.println(aparatos[i]);
+			System.out.println("Precio del articulo (15%-):");
+			System.out.println(Math.rint(aparatos[i].preciopPVPRebajado(15)*100/100)+"€");
+		}
 		
 		//SmartPhone XperiaJ= new SmartPhone("5","002","Sony Xperia J St26i Blanco","Android",119);
 		//SmartPhone HiesenseHS = new SmartPhone("2","003","Hisense HS-U980 Blanco","Android",179);

@@ -21,18 +21,32 @@ public class SmartPhone extends Aparato {
 		this.numTecnologias=0;
 	}
 	public String[] getTecTransm() {
-		return tecTransm;
+		return Arrays.copyOf(tecTransm, numTecnologias);
 	}
-
-
+	/*
+	public void setTecTransm(String nueTec){
+		if(numTecnologias<10)
+		tecTransm[numTecnologias++]=nueTec;
+	}
+	*/
 	public void setTecTransm(String[] tecTransm) {
-		this.tecTransm = tecTransm;
+		for(int i=0; i<tecTransm.length;i++){
+			this.tecTransm[i] = new String (tecTransm[i]);
+			this.numTecnologias=tecTransm.length;
+		}
+		
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nSmartPhone [tecTransm="
-				+ Arrays.toString(tecTransm) + "]";
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i=0; i<numTecnologias;i++){ 
+			sb.append(tecTransm[i]);
+			if (i<numTecnologias-1) sb.append(", ");
+		}		
+		return super.toString() + "\nSubClase: SmartPhone\n \tTecnológias de Transmisión-->"
+				+  sb.toString();
 	}
 
 	// Añadir el método addTecnología en la clase SmartPhone que tome como
@@ -43,10 +57,9 @@ public class SmartPhone extends Aparato {
 	// tecnología no se repita.
 	private boolean repetida(String tecnologia) {
 		boolean repetida = false;
-		for(int i=0; i < this.numTecnologias; ++i) {
+		for(int i=0; i < this.numTecnologias && !repetida; ++i) {
 			if(this.tecTransm[i].equalsIgnoreCase(tecnologia)) {
 				repetida = true;
-				i = this.numTecnologias;
 			}			
 		}
 		
@@ -55,7 +68,7 @@ public class SmartPhone extends Aparato {
 	public void addTecnologia(String tecnologia){
 		
 		if(!this.repetida(tecnologia)) {
-			this.tecTransm[this.numTecnologias] = tecnologia;
+			this.tecTransm[this.numTecnologias] = tecnologia.toUpperCase();
 			++this.numTecnologias;
 		} else 
 			System.out.println("La tecnología ya está definida.");
