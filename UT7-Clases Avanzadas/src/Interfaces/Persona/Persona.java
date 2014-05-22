@@ -6,7 +6,7 @@ package Interfaces.Persona;
  */
 public interface Persona {
 	
-	String nombreEmpresa();
+	String nombreEmpresa = "Restaurante Tan Dao Vien";
 	
 	public void pedirDatos();
 	

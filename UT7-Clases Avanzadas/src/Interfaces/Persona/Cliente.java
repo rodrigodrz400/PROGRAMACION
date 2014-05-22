@@ -16,7 +16,6 @@ public class Cliente implements Persona {
 	private int codigoPostal;
 	private int edad;
 	private String email;
-	private String nombreEmpresa;
 	
 	
 	public Cliente(){
@@ -27,7 +26,7 @@ public class Cliente implements Persona {
 		this.codigoPostal = codigoPostal;
 		this.edad = edad;
 		this.email = email;
-		this.nombreEmpresa=nombreEmpresa();
+
 	}
 	public Cliente(String nombre, String direccion, String poblacion,
 			String provincia, int codigoPostal, int edad, String email) {
@@ -38,7 +37,6 @@ public class Cliente implements Persona {
 		this.codigoPostal = codigoPostal;
 		this.edad = edad;
 		this.email = email;
-		this.nombreEmpresa=nombreEmpresa();
 	}
 	
 	public String getNombre() {
@@ -83,29 +81,44 @@ public class Cliente implements Persona {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	@Override
-	public String nombreEmpresa() {
-		
-		return "Restaurante Tan Dao Vien";
-	}
 
 	@Override
 	public void pedirDatos() {
+	Scanner teclado = new Scanner(System.in);
+	System.out.println("Ingrese los datos del cliente:");
+	
+	System.out.println("Nombre:");
+	this.nombre=teclado.nextLine();
+	System.out.println("Dirección:");
+	this.direccion=teclado.nextLine();
+	System.out.println("Población:");
+	this.poblacion=teclado.nextLine();
+	System.out.println("Provincia:");
+	this.provincia=teclado.nextLine();
+	System.out.println("Código postal:");
+	this.codigoPostal=teclado.nextInt();
+	System.out.println("Edad:");
+	this.edad=teclado.nextInt();
+	System.out.println("E-amil:");
+	this.email=teclado.next();
 	
 	}
 
 	@Override
 	public String visualizarDatos() {
-		return 	"Empresa:\t" +nombreEmpresa + "\nCliente: \n\tNombre-->\t" + nombre 
+		return 	"\n\nEmpresa:\t" +nombreEmpresa + "\nCliente: \n\tNombre----->\t" + nombre 
 				+ "\n\tDireccion-->\t" + direccion
 				+ "\n\tPoblacion-->\t" + poblacion + "\n\tProvincia-->\t" + provincia
-				+ "\n\tCodigo Postal-->" + codigoPostal + "\n\tEdad-->\t\t" + edad
-				+ "\n\tE-mail-->\t" + email;
+				+ "\n\tCodigo Postal\t" + codigoPostal + "\n\tEdad------->\t" + edad
+				+ "\n\tE-mail----->\t" + email;
 		
 	}
 	public static void main(String[] args) {
-		Cliente rodrigo = new Cliente("Rodrigo","C/ Mayor, 43","Menasalbas","Toledo",45128,31,"rodrigo@gmail.com");
+		//Cliente rodrigo = new Cliente("Rodrigo","C/ Mayor, 43","Menasalbas","Toledo",45128,31,"rodrigo@gmail.com");
+		
+		Cliente rodrigo= new Cliente();
+		
+		rodrigo.pedirDatos();
 		
 		System.out.println(rodrigo.visualizarDatos());
 	
