@@ -112,11 +112,11 @@ public class Empleado implements Persona {
 
 	@Override
 	public String visualizarDatos() {
-		return 	"\nEmpresa:\t" +nombreEmpresa + "\nEmpleado: \n\tNombre----->\t" + nombre 
-				+ "\n\tDireccion-->\t" + direccion
-				+ "\n\tPoblacion-->\t" + poblacion + "\n\tProvincia-->\t" + provincia
-				+ "\n\tCodigo Postal\t" + codigoPostal + "\n\tEdad------->\t" + edad
-				+ "\n\tE-mail----->\t" + email + "\n\tSueldo----->\t" + sueldo +"€" ;
+		return 	"\nEmpresa:\t" +nombreEmpresa + "\nEmpleado: \n\t\tNombre----->\t" + nombre 
+				+ "\n\t\tDireccion-->\t" + direccion
+				+ "\n\t\tPoblacion-->\t" + poblacion + "\n\t\tProvincia-->\t" + provincia
+				+ "\n\t\tCodigo Postal\t" + codigoPostal + "\n\t\tEdad------->\t" + edad
+				+ "\n\t\tE-mail----->\t" + email + "\n\t\tSueldo----->\t" + sueldo +"€" ;
 		
 	}
 	public static void main(String[] args) {
