@@ -31,7 +31,7 @@ public class E1PedirNombres {
 	}while(DeseaContinuar.deseaContinuar("¿Quiere insertar otro nombre [s/n]? ", 
 			"Debe introducir uno de estos dos caracteres [s] o [n] para continuar."));
 	
-	ListIterator<String> iter = nombres.listIterator();
+	ListIterator<String> iter = nombres.listIterator();//se crea un iterador sobre una lista que ya no va a cambiar IMPORTANTE
 	
 	System.out.println("\nLISTA de nombres en orden de inserción: ");
 

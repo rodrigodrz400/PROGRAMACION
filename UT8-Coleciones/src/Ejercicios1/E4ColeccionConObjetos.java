@@ -54,7 +54,8 @@ public class E4ColeccionConObjetos {
 		System.out.println();
 		
 		//3.Borra toda la primera colección.
-		coleccion1.removeAll(coleccion1);
+				//coleccion1.removeAll(coleccion1);
+			   	  coleccion1.clear();
 		System.out.println("El LinkedList contine: " +coleccion1.toString());
 		System.out.println("El ArrayList contine: " +coleccion2.toString());
 
