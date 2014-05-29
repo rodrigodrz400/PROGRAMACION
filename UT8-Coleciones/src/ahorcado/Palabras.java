@@ -105,7 +105,7 @@ public class Palabras {
 				System.out.println(" 2. Salir. ");
 				System.out.print(" \n Opcion --> ");
 				opcion = teclado.nextInt();
-			} while (opcion != 1 && opcion != 2 && opcion != 3);
+			} while (opcion != 1 && opcion != 2);
 
 			switch (opcion) {
 
